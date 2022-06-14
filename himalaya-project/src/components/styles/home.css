@@ -80,3 +80,45 @@
     text-align: center;
     margin-top: 15px;
 }
+#box-outer{
+    border: 1px solid blue;
+    height: 440px;
+    display: flex;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+}
+#box-outer>div{
+    width: 33%;
+    border: 1px solid blue;
+    height: 100%;
+}
+#box-outer>div>img{
+    height: 370px;
+    width: 100%;
+}
+#box-outer>div>img:hover{
+    transform: scale(1.06);
+    transition: 2.5s;
+   
+    transform: translate(1.4);
+}
+#bottom-text{
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: black;
+    text-align: center;
+}
+#bottom-text-2{
+    color: #a3b49b;
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    margin-top: 10px;
+
+}
