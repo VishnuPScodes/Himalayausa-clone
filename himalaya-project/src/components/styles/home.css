@@ -1,0 +1,82 @@
+#back-img{
+    border: 1px solid blue;
+    background-image: url('https://cdn.shopify.com/s/files/1/0399/1728/9633/files/hero-desktop-ashwagandha_x720.jpg?v=1608662725');
+   background-size: 100% 100%;
+    height: 480px;
+}
+#asw-div{
+    border: 1px solid black;
+    height: 80px;
+    width: 440px;
+    margin-top: 140px;
+    background-color: white;
+    opacity: .8;
+}
+#text-asw{
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 46px;
+    line-height: 60px;
+    color: black;
+    text-align: center;
+}
+#des-div{
+    border: 1px solid blue;
+    height: 60px;
+    width: 360px;
+    margin-left: 30px;
+
+
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: black;
+    text-align: center;
+    margin-top: 15px;
+    
+}
+#btn-now{
+   margin-right: 1060px;
+   margin-left: 0px;
+  
+    
+}
+#btn{
+    height: 50px;
+    width: 160px;
+    font-family:  Poppins, sans-serif;
+    font-style: normal;
+    font-size: 13px;
+    line-height: 33px;
+    color: #ffffff;
+    font-weight: 500;
+    background-color: #48cab2;
+    margin-top: 30px;
+    border: none;
+
+
+
+   
+}
+#btn:hover{
+    background-color:#333333;
+}
+#shop-category{
+    border: 1px solid blue;
+    height: 600px;
+   
+    margin-top: 80px;
+}
+#text-1{
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 40px;
+    color: black;
+    text-align: center;
+    margin-top: 15px;
+}

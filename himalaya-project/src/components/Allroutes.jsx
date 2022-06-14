@@ -8,5 +8,6 @@ import { Home } from "../pages/Home"
 export const Allroutes=(()=>{
     return <Routes>
         <Route path="/" element={<Home/>} />
+        
     </Routes>
 })
