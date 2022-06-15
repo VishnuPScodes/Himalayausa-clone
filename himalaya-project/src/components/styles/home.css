@@ -7,7 +7,7 @@
 #asw-div{
     border: 1px solid black;
     height: 80px;
-    width: 440px;
+    width: 35%;
     margin-top: 140px;
     background-color: white;
     opacity: .8;
@@ -99,8 +99,8 @@
 }
 #box-outer>div>img:hover{
     transform: scale(1.06);
-    transition: 2.5s;
-   
+    transition: 1.5s;
+  
     transform: translate(1.4);
 }
 #bottom-text{
@@ -111,6 +111,7 @@
     line-height: 26px;
     color: black;
     text-align: center;
+    margin-top: 20px;
 }
 #bottom-text-2{
     color: #a3b49b;
@@ -120,5 +121,18 @@
     font-size: 14px;
     line-height: 14px;
     margin-top: 10px;
+  
 
+}
+#inner-text-2{
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 25px;
+    line-height: 36px;
+    color: #333333;
+    
+}
+#text-div-main{
+    margin-left: 30px;
 }
