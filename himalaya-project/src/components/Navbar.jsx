@@ -15,6 +15,14 @@ import {
     useBreakpointValue,
     useDisclosure,
   } from '@chakra-ui/react';
+  import { Fade, ScaleFade, Slide, SlideFade } from '@chakra-ui/react'
+  import { Tag } from '@chakra-ui/react';
+  import React from 'react'
+  import { Tooltip } from '@chakra-ui/react'
+  import {BsBag} from 'react-icons/bs'
+//   import {IoPersonOutline} from 'react-icons'
+  import {RiSearchLine} from 'react-icons/ri' 
+  import {MdOutlinePersonOutline} from 'react-icons/md'
   import {
     HamburgerIcon,
     CloseIcon,
@@ -26,7 +34,7 @@ import {
     const { isOpen, onToggle } = useDisclosure();
   
     return (
-      <Box>
+      <Box >
         <Flex
           bg={useColorModeValue('white', 'gray.800')}
           color={useColorModeValue('gray.600', 'white')}
@@ -68,15 +76,31 @@ import {
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
-            <Button
+            {/* <Button
               as={'a'}
               fontSize={'sm'}
               fontWeight={400}
               variant={'link'}
               href={'#'}>
               Sign In
-            </Button>
-            <Button
+            </Button> */}
+   <Tooltip label='Search'>
+      <CustomCard>
+      <RiSearchLine/>
+      </CustomCard>
+    </Tooltip>
+    <Tooltip label='My Account'>
+      <CustomCard>
+      <MdOutlinePersonOutline/>
+      </CustomCard>
+    </Tooltip>
+    <Tooltip label='Cart'>
+      <CustomCard>
+      <BsBag/>
+      </CustomCard>
+    </Tooltip>
+   
+            {/* <Button
               display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
               fontWeight={600}
@@ -87,7 +111,24 @@ import {
                 bg: 'pink.300',
               }}>
               Sign Up
-            </Button>
+            </Button> */}
+            {/* <IoPersonOutline/> */}
+            <div> 
+            <Button onClick={onToggle}>Click Me</Button>
+        <Collapse id='togle-nav' in={isOpen} animateOpacity>
+          <div  id='togle-nav'
+            
+          >
+          <span  >Nonw</span>
+           
+          </div>
+        </Collapse>
+                
+                 </div>
+          
+            
+           
+            
           </Stack>
         </Flex>
   
@@ -204,5 +245,34 @@ import {
       </Stack>
     );
   };
+  const CustomCard = React.forwardRef(({ children, ...rest }, ref) => (
+    <Box p='1'>
+      <Tag ref={ref} {...rest}>
+        {children}
+      </Tag>
+    </Box>
+  ))
+
+
+
+  function CollapseEx() {
+    const { isOpen, onToggle } = useDisclosure()
+  
+    return (
+      <>
+        <Button onClick={onToggle}>Click Me</Button>
+        <Collapse in={isOpen} animateOpacity>
+          <Box
+            
+          >
+          <span>Nonw</span>
+           
+          </Box>
+        </Collapse>
+      </>
+    )
+  }
+ 
+    
   
  

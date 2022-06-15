@@ -17,7 +17,7 @@ import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 
 export const Home=(()=>{
-    return <div>
+    return <div  >
         <div id="back-img" >
             <div id='asw-div' > <div id='text-asw'> ASHWAGANDHA</div> </div>
             <div id='des-div' >A star performer for stress and energy in a potent, organic caplet.</div>

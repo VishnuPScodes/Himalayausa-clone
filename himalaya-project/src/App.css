@@ -40,3 +40,6 @@
 button {
   font-size: calc(10px + 2vmin);
 }
+#togle-nav{
+  z-index: 2;
+}
