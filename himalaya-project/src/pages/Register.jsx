@@ -98,7 +98,7 @@ import {
                   bg={'#a3b49b'}
                   color={'white'}
                   _hover={{
-                    bg: 'blue.500',
+                    bg: '#5a6952',
                   }}>
                   CREATE
                 </Button>
