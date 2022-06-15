@@ -1,10 +1,15 @@
 import '../components/styles/home.css'
 import React, { Component } from "react";
+import { Box ,HStack,Image} from '@chakra-ui/react';
+import {FaFacebookF} from 'react-icons/fa' 
+import { FaInstagram } from 'react-icons/fa';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../components/styles/carousel.css";
 import { SliderData } from "./SliderData";
+import { SliderData2 } from "./SliderData";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -52,6 +57,23 @@ export const Home=(()=>{
             </div>
         </div>
        </div>
+       <Carousel2/>
+     <div id='social-text'>Follow us @himalayausa <FaInstagram id='logo-insta'/> <FaFacebookF id='icon-fb' /> </div>
+
+     <HStack  width={'95%'} margin={'auto'}>
+        <Box id='social-media' w={'300px'}  h={'200px'}>
+            <Image  src='https://scontent.cdninstagram.com/v/t51.2885-15/279060214_1028931348020017_977861928696093797_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=UGMcEfEpxE8AX9A5fu-&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT9zWrI1IhickF9x3SQP0KC9rI3xSwvuNa97oeRKm9KLIA&oe=62ADDC87' />
+        </Box>
+        <Box id='social-media'  w={'300px'} h={'200px'}>
+            <Image src='https://scontent.cdninstagram.com/v/t51.2885-15/277292932_5613162492028340_2851075865814001728_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=ItsIc4cIzTsAX82kuzY&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT98HNBdtVG1tsrH1PFENI2bjB-OhXzRqWwHfKMc_2hcrA&oe=62AE140B' />
+        </Box>
+        <Box id='social-media'  w={'300px'} h={'200px'}>
+            <Image src='https://scontent.cdninstagram.com/v/t51.2885-15/210602775_2989071524684964_2920882526894167214_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=l9q4K1b3RhcAX-CoRtw&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT_JJQoZwpe6UIvaN2t22BTA3QXEu_t67k0ulHANZcJIgA&oe=62ADB945' />
+        </Box>
+        <Box id='social-media'  w={'300px'} h={'200px'}>
+            <Image src='https://scontent.cdninstagram.com/v/t51.2885-15/204274359_2975479076040360_2380187042423867081_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=8ae9d6&_nc_ohc=9QfeIrZ97OoAX_32Tw3&_nc_ht=scontent.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AT_BDa1FiBofYuT43NoaIyfai2mVW0v2yy8CDNiQGXq7yw&oe=62AE3EEB' />
+        </Box>
+     </HStack>
 
 
 
@@ -148,9 +170,39 @@ const PreviousBtn = (props) => {
             objectFit: "contain",
             marginBottom: "10px",
           }}
+          
         />
+       
       </div>
     );
   };
   
+
+  const Carousel2 = () => {
+    return (
+      <div style={{ margin: "30px" }} className="carousel">
+        {/* <h1 className="cHead" id='heading-text'>Best Sellers</h1> */}
+     
+        <Slider {...carouselProperties}>
+          {SliderData2.map((item) => (
+            <div id='card-1'> 
+            <p id='comment'>{item.name}
+            <br /> <br /> 
+            <p id='author'>{item.author}</p>
+            </p>
+            </div>
+        
+            
+          ))}
+         
+          {/* {authors.map((item)=>{
+
+            return <p>{item}</p>
+          })} */}
+      
+        </Slider>
+       
+      </div>
+    );
+  };
   export default Carousel;
