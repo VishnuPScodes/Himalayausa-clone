@@ -29,9 +29,11 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
+import { useNavigate } from 'react-router';
   
   export const Navbar=()=> {
     const { isOpen, onToggle } = useDisclosure();
+    const navigate=useNavigate()
   
     return (
       <Box >
@@ -91,7 +93,9 @@ import {
     </Tooltip>
     <Tooltip label='My Account'>
       <CustomCard>
-      <MdOutlinePersonOutline/>
+      <MdOutlinePersonOutline onClick={(()=>{
+        navigate('/Register')
+      })} />
       </CustomCard>
     </Tooltip>
     <Tooltip label='Cart'>
@@ -99,6 +103,8 @@ import {
       <BsBag/>
       </CustomCard>
     </Tooltip>
+ 
+    
    
             {/* <Button
               display={{ base: 'none', md: 'inline-flex' }}
@@ -273,6 +279,7 @@ import {
     )
   }
  
+
     
   
  
