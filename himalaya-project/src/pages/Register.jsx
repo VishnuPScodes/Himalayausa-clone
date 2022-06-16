@@ -17,23 +17,52 @@ import {
     useColorModeValue,
     Link,
   } from '@chakra-ui/react';
-  import { useState } from 'react';
+  import {createUserWithEmailAndPassword,onAuthStateChanged, updateCurrentUser,signOut} from 'firebase/auth'
+  import {auth} from '../components/firebase/firebase'
+  
+
+  // import { useAuth } from '../components/contexts/authContext';
+  // const {register}=useAuth()
+  import { useRef, useState } from 'react';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+import { useNavigate } from 'react-router';
   
   export const  Register=()=> {
+    const [user,setUser]=useState({})
+    onAuthStateChanged(auth,(updateCurrentUser)=>{
+      setUser(updateCurrentUser)
+    })
+    const navigate=useNavigate()
     const[formData,setFormData]=useState([])
     const [showPassword, setShowPassword] = useState(false);
     const handleChange=((e)=>{
      const {id,value}=e.target
      setFormData({...formData,
     [id]:value
-    })
-   
-    })
-    const handleSubmit=(()=>{
-        console.log(formData)
+  })
+})
 
-    })
+
+ 
+    
+   
+  
+    const handleSubmit=async ()=>{
+      try{
+        const user=await createUserWithEmailAndPassword(auth,formData.email,formData.password)
+        console.log('user',user)
+        navigate('/')
+
+      }catch(err){
+        console.log('error',err.message)
+      }
+      
+    }
+    // const signOutfxn=(()=>{
+    //  signOut(auth)
+    // })
+    const emailRef=useRef();
+    const passwordRef=useRef();
   
     return (
       <Flex
@@ -60,25 +89,25 @@ import {
                 <Box>
                   <FormControl id="firstName" isRequired>
                     <FormLabel>First Name</FormLabel>
-                    <Input id='firstName' onChange={handleChange} type="text" />
+                    <Input id='firstName'  type="text" />
                   </FormControl>
                 </Box>
                 <br/>
                 <Box>
                   <FormControl id="lastName">
                     <FormLabel>Last Name</FormLabel>
-                    <Input id='lastName' onChange={handleChange} type="text" />
+                    <Input id='lastName' type="text" />
                   </FormControl>
                 </Box>
               </HStack>
               <FormControl id="email" isRequired>
                 <FormLabel>Email address</FormLabel>
-                <Input id='email' onChange={handleChange} type="email" />
+                <Input id='email' ref={emailRef} onChange={handleChange} type="email" />
               </FormControl>
               <FormControl id="password" isRequired>
                 <FormLabel>Password</FormLabel>
                 <InputGroup>
-                  <Input id='password' onChange={handleChange} type={showPassword ? 'text' : 'password'} />
+                  <Input id='password' ref={passwordRef} onChange={handleChange} type={showPassword ? 'text' : 'password'} />
                   <InputRightElement h={'full'}>
                     <Button
                       variant={'ghost'}
@@ -110,7 +139,10 @@ import {
               </Stack>
             </Stack>
           </Box>
+        {/* <Button onClick={signOutfxn}> Sign oUT</Button> */}
         </Stack>
+        {user?.email}
       </Flex>
+     
     );
   }

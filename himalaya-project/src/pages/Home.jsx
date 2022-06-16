@@ -147,7 +147,7 @@ const PreviousBtn = (props) => {
      
         <Slider {...carouselProperties}>
           {SliderData.map((item) => (
-            <Card item={item} />
+            <Card key={Date.now} item={item} />
             
           ))}
       
@@ -185,7 +185,7 @@ const PreviousBtn = (props) => {
      
         <Slider {...carouselProperties}>
           {SliderData2.map((item) => (
-            <div id='card-1'> 
+            <div key={Date.now} id='card-1'> 
             <p id='comment'>{item.name}
             <br /> <br /> 
             <p id='author'>{item.author}</p>
