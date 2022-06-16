@@ -123,18 +123,7 @@ import {Link} from 'react-router-dom'
               Sign Up
             </Button> */}
             {/* <IoPersonOutline/> */}
-            <div> 
-            <Button onClick={onToggle}>Click Me</Button>
-        <Collapse id='togle-nav' in={isOpen} animateOpacity>
-          <div  id='togle-nav'
-            
-          >
-          <span  >Nonw</span>
-           
-          </div>
-        </Collapse>
-                
-                 </div>
+          
           
             
            

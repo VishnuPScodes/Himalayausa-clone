@@ -145,9 +145,9 @@ import { authActionRequest, authActionSuccess } from '../redux/action';
               </Stack>
             </Stack>
           </Box>
-        <Button onClick={signOutfxn}> Sign oUT</Button>
+
         </Stack>
-        {user?.email}
+        {/* {user?.email} */}
       </Flex>
      
     );

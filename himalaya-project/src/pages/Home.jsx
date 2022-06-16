@@ -26,7 +26,7 @@ export const Home=(()=>{
             </div>
            
         </div>
-        <div id='shop-category' >
+        <div id='shop-category'  >
             <div id='text-1' >Shop By Category</div>
             <div id='box-outer' >
                 <div>

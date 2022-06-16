@@ -61,7 +61,7 @@ import { useNavigate } from 'react-router';
                   }}>
                   Sign in
                 </Button>
-                <Button>Here</Button>
+               
                 <div style={{width:"340px",margin:"auto",textAlign:"left"}}>   
                 <h2>New Costomer?</h2>
                 <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
