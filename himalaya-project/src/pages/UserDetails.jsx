@@ -1,9 +1,22 @@
 
+import { signOut } from 'firebase/auth'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router'
+import { auth } from '../components/firebase/firebase'
 import '../components/styles/user.css'
+import { authActionLogout } from '../redux/action'
 
 
 
 export const UserDetails=(()=>{
+    const dispatch=useDispatch()
+    const navigate=useNavigate()
+    const signOutfxn=(()=>{
+
+        signOut(auth)
+        dispatch(authActionLogout())
+        navigate('/')
+    })
     return <div>
         <div id="heading">Account</div>
         <div style={{marginTop:"100px",marginLeft:"30px"}}>  
@@ -18,7 +31,7 @@ export const UserDetails=(()=>{
         <div id='name'>Country:</div>
         <div id='name'>Zip:</div>
         <div id='name'>Phone:</div>
-        <button id='btn-so'>SIGN OUT</button>
+        <button id='btn-so' onClick={signOutfxn}>SIGN OUT</button>
 </div>
         </div>
     </div>

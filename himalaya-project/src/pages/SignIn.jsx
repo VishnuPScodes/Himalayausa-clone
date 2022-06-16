@@ -11,10 +11,12 @@ import {
     Heading,
     Text,
     useColorModeValue,
+    Spinner,
   } from '@chakra-ui/react';
 import { useNavigate } from 'react-router';
   
   export const SignIn=()=> {
+    
     const navigate=useNavigate()
     return <div> 
       <Flex
@@ -59,18 +61,13 @@ import { useNavigate } from 'react-router';
                   }}>
                   Sign in
                 </Button>
-              </Stack>
-            </Stack>
-          </Box>
-        </Stack>
-      </Flex>
-
-
-    {/* //  bottom box is from here */}
-    <div style={{width:"340px",margin:"auto",textAlign:"left"}}> 
-        <h2>New Costomer?</h2>
-        <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
-    <Button style={{width:"88%",margin:"auto",height:"36px",marginLeft:"25px"}}
+                <Button>Here</Button>
+                <div style={{width:"340px",margin:"auto",textAlign:"left"}}>   
+                <h2>New Costomer?</h2>
+                <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+                
+                </div>
+                <Button style={{}}
                   bg={'#5a6952'}
                   color={'white'}
                   _hover={{   
@@ -81,6 +78,15 @@ import { useNavigate } from 'react-router';
                   })}>
                   CREATE AN ACCOUNT
                 </Button>
-                </div>
+                
+              </Stack>
+            </Stack>
+          </Box>
+         
+        </Stack>
+       
+      </Flex>
+
+
       </div>
   }

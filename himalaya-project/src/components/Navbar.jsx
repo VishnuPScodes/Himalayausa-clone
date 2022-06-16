@@ -98,7 +98,7 @@ import {Link} from 'react-router-dom'
     <Tooltip label='My Account'>
       <CustomCard>
       <MdOutlinePersonOutline onClick={(()=>{
-        navigate('/Login')
+        navigate('/User')
       })} />
       </CustomCard>
     </Tooltip>

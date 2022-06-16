@@ -16,6 +16,7 @@ import {
     Text,
     useColorModeValue,
     Link,
+    Spinner,
   } from '@chakra-ui/react';
   import {createUserWithEmailAndPassword,onAuthStateChanged, updateCurrentUser,signOut, signInWithEmailAndPassword} from 'firebase/auth'
   import {auth} from '../components/firebase/firebase'
@@ -23,7 +24,7 @@ import {
 
   // import { useAuth } from '../components/contexts/authContext';
   // const {register}=useAuth()
-  import { useDispatch } from 'react-redux';
+  import { useDispatch ,useSelector} from 'react-redux';
   import { useRef, useState } from 'react';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router';
@@ -53,7 +54,7 @@ import { authActionRequest, authActionSuccess } from '../redux/action';
     const handleSubmit=async ()=>{
       dispatch(authActionRequest())
       try{
-        const user=await signInWithEmailAndPassword(auth,formData.email,formData.password)
+        const user=await createUserWithEmailAndPassword(auth,formData.email,formData.password)
         console.log('user',user)
         dispatch(authActionSuccess())
         navigate('/')
@@ -68,7 +69,7 @@ import { authActionRequest, authActionSuccess } from '../redux/action';
     })
     const emailRef=useRef();
     const passwordRef=useRef();
-  
+    const loadingIs=useSelector(state=>state.loading)
     return (
       <Flex
         minH={'100vh'}
@@ -134,7 +135,7 @@ import { authActionRequest, authActionSuccess } from '../redux/action';
                   _hover={{
                     bg: '#5a6952',
                   }}>
-                  CREATE
+                  {loadingIs==true?<Spinner/>:"CREATE"}
                 </Button>
               </Stack>
               <Stack pt={6}>
