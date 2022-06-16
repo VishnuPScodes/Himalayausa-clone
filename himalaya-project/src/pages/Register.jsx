@@ -59,9 +59,9 @@ import { useNavigate } from 'react-router';
       }
       
     }
-    // const signOutfxn=(()=>{
-    //  signOut(auth)
-    // })
+    const signOutfxn=(()=>{
+     signOut(auth)
+    })
     const emailRef=useRef();
     const passwordRef=useRef();
   
@@ -140,7 +140,7 @@ import { useNavigate } from 'react-router';
               </Stack>
             </Stack>
           </Box>
-        {/* <Button onClick={signOutfxn}> Sign oUT</Button> */}
+        <Button onClick={signOutfxn}> Sign oUT</Button>
         </Stack>
         {user?.email}
       </Flex>
