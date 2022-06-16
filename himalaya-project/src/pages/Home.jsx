@@ -1,6 +1,6 @@
 import '../components/styles/home.css'
 import React, { Component } from "react";
-import { Box ,HStack,Image} from '@chakra-ui/react';
+import { Box ,HStack,Image, SimpleGrid, Stack} from '@chakra-ui/react';
 import {FaFacebookF} from 'react-icons/fa' 
 import { FaInstagram } from 'react-icons/fa';
 import Slider from "react-slick";
@@ -26,26 +26,33 @@ export const Home=(()=>{
             </div>
            
         </div>
-        <div id='shop-category'  >
+       
+           
+            <Stack id='shop-category'  >
             <div id='text-1' >Shop By Category</div>
-            <div id='box-outer' >
-                <div>
+            <SimpleGrid id='box-outer' columns={{
+          base:"1",
+          sm:"2",
+          md:"3"
+      }} >
+                <Box w={{base:"100%",md:"100%",sm:"100%"}}>
                     <img src="https://cdn.shopify.com/s/files/1/0399/1728/9633/files/HUSA-Ashwagandha-90ct-Carton_Bottle-square_1024x.png?v=1607451904" alt="" />
                     <div id='bottom-text' >Supplements</div>
-                    <div id='bottom-text-2'>See All Supplemets</div>
-                </div>
-                <div>
+                    <div id='bottom-text-2' color={{sm:"red",md:"green"}}>See All Supplemets</div>
+                </Box>
+                <Box w={{base:"100%",md:"100%",sm:"100%"}}>
                     <img src="https://cdn.shopify.com/s/files/1/0399/1728/9633/files/WCC-SIMPLY-MINT-RENDER-WITH-BRUSH-High-Res_1024x.png?v=1607451904" alt="" />
                     <div id='bottom-text' >Oral Care</div>
                     <div id='bottom-text-2'>See All Oral Care</div>
-                </div>
-                <div>
+                </Box>
+                <Box w={{base:"100%",md:"100%",sm:"100%"}}>
                     <img src="https://cdn.shopify.com/s/files/1/0399/1728/9633/files/Face_Wash-Balancing-Box-Bottle-square_1024x.png?v=1607451904" alt="" />
                     <div id='bottom-text' >Personal Care</div>
                     <div id='bottom-text-2'>See All Personal Care</div>
-                </div>
-            </div>
-        </div>
+                </Box>
+            </SimpleGrid>
+
+        </Stack>
        <Carousel/>
        <div id='bottom-div-2'>
         <div id='inner-div-2' >
