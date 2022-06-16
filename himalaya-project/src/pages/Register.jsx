@@ -23,11 +23,14 @@ import {
 
   // import { useAuth } from '../components/contexts/authContext';
   // const {register}=useAuth()
+  import { useDispatch } from 'react-redux';
   import { useRef, useState } from 'react';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router';
+import { authActionRequest, authActionSuccess } from '../redux/action';
   
   export const  Register=()=> {
+    const dispatch=useDispatch()
     const [user,setUser]=useState({})
     onAuthStateChanged(auth,(updateCurrentUser)=>{
       setUser(updateCurrentUser)
@@ -48,10 +51,11 @@ import { useNavigate } from 'react-router';
    
   
     const handleSubmit=async ()=>{
-      
+      dispatch(authActionRequest())
       try{
         const user=await signInWithEmailAndPassword(auth,formData.email,formData.password)
         console.log('user',user)
+        dispatch(authActionSuccess())
         navigate('/')
 
       }catch(err){
