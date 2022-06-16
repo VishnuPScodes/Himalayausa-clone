@@ -1,4 +1,4 @@
-import { authActionFailure, authActionRequest, authActionSuccess } from "./store"
+import { authActionFailure, authActionRequest, authActionSuccess } from "./action"
 
 
 

@@ -8,7 +8,7 @@ export const store=legacy_createStore(authReducer)
 
 
 store.subscribe(()=>{
-    console.log('store is updated',store.getSate())
+    console.log('store is updated',store.getState())
 })
 
-console.log(store.getSate())
+console.log(store.getState())
