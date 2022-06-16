@@ -7,7 +7,7 @@ import {
     Stack,
     Collapse,
     Icon,
-    Link,
+  
     Popover,
     PopoverTrigger,
     PopoverContent,
@@ -16,6 +16,7 @@ import {
     useDisclosure,
   } from '@chakra-ui/react';
   import { Fade, ScaleFade, Slide, SlideFade } from '@chakra-ui/react'
+
   import { Tag } from '@chakra-ui/react';
   import React from 'react'
   import { Tooltip } from '@chakra-ui/react'
@@ -30,6 +31,7 @@ import {
     ChevronRightIcon,
   } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router';
+import {Link} from 'react-router-dom'
   
   export const Navbar=()=> {
     const { isOpen, onToggle } = useDisclosure();
@@ -60,14 +62,16 @@ import { useNavigate } from 'react-router';
               aria-label={'Toggle Navigation'}
             />
           </Flex>
+         
           <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+            <Link to={'/'}> 
             <Text
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
-              color={useColorModeValue('gray.800', 'white')}>
+              color={useColorModeValue('gray.800', 'white')}> 
               Logo
             </Text>
-  
+            </Link>
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>
@@ -94,7 +98,7 @@ import { useNavigate } from 'react-router';
     <Tooltip label='My Account'>
       <CustomCard>
       <MdOutlinePersonOutline onClick={(()=>{
-        navigate('/Register')
+        navigate('/Login')
       })} />
       </CustomCard>
     </Tooltip>

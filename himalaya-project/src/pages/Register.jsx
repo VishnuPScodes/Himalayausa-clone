@@ -17,7 +17,7 @@ import {
     useColorModeValue,
     Link,
   } from '@chakra-ui/react';
-  import {createUserWithEmailAndPassword,onAuthStateChanged, updateCurrentUser,signOut} from 'firebase/auth'
+  import {createUserWithEmailAndPassword,onAuthStateChanged, updateCurrentUser,signOut, signInWithEmailAndPassword} from 'firebase/auth'
   import {auth} from '../components/firebase/firebase'
   
 
@@ -48,8 +48,9 @@ import { useNavigate } from 'react-router';
    
   
     const handleSubmit=async ()=>{
+      
       try{
-        const user=await createUserWithEmailAndPassword(auth,formData.email,formData.password)
+        const user=await signInWithEmailAndPassword(auth,formData.email,formData.password)
         console.log('user',user)
         navigate('/')
 
