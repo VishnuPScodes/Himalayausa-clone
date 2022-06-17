@@ -11,3 +11,76 @@
     height: 900px;
     width: 50%;
 }
+#img-pro{
+    border: 1px solid greenyellow;
+    width: 90%;
+    height: 500px;
+    margin: auto;
+    margin-top: 70px;
+}
+#data-pro{
+    border: 1px solid red;
+    height: 700px;
+    width: 90%;
+    margin: auto;
+    margin-top: 70px;
+}
+#text-pro{
+    
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 50px;
+    color: #333333;
+    text-align: left;
+}
+#price-pro{
+    text-align: left;
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+    color: #333333;
+}
+#btns-pro{
+    display: flex;
+    margin-top: 20px;
+
+}
+#display-plus{
+    height: 100%;
+    width: 40%;
+ 
+    margin: auto;
+}
+#btn-1-min{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    padding-left: 10px;
+    padding-bottom: 20px;
+   
+}
+#plus-btns{
+    width: 110px;
+    height: 45px;
+    border: 1px solid blue;
+    border-radius: 20px;
+    display: flex;
+    background-color: #f8f8f8;
+}
+#btn-1-plus{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+#btn-1-min:hover{
+    cursor: pointer;
+}
+#btn-1-plus:hover{
+    cursor: pointer;
+}
