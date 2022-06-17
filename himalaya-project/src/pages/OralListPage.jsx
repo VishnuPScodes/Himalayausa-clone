@@ -27,7 +27,9 @@ export const OralListPage=(()=>{
     > <h1>Oral Care</h1>
         <div style={{display:"flex"}}>
        
-            <div id="side-1">Filter</div>
+            <div id="side-1">Filter
+            <div></div>
+            </div>
             <div id="contend">
                 <div id='sort' >ff</div>
                 <div id='data-map'>

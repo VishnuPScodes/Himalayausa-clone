@@ -18,7 +18,7 @@ export const PersonalCare=(()=>{
     const [data,setData]=useState([])
     const dispatch=useDispatch()
     useEffect(()=>{
-      axios.get(`http://localhost:8080/oral?_limit=${items}`).then((res)=>{
+      axios.get(`http://localhost:8080/personal?_limit=${items}`).then((res)=>{
          setData(res.data)
          dispatch(productLoadingFalse())
       })
