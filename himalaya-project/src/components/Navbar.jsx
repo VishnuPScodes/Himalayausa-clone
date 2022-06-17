@@ -68,7 +68,11 @@ import {Link} from 'react-router-dom'
             <Link to={'/'}> 
            <Image height='60px' src='https://th.bing.com/th/id/R.3cde0cae8adcd6a34b9c1ef8ba355de9?rik=DgKn0pCaBvlawQ&riu=http%3a%2f%2fimages.indianexpress.com%2f2016%2f07%2fhimalaya-logo-759.jpg&ehk=PqoLRrEC4GcmWWhSlBrvffhmJMfgxLTvZ7jOFBneZk8%3d&risl=&pid=ImgRaw&r=0'/>
             </Link>
-            <Link id='shop-nav' to={'/'} >Shop</Link>
+            <Link id='shop-nav' to={'/Herbal'} >Herbal Supplements</Link>
+            <Link id='shop-nav-2' to={'/Oralcare'} >Oral Care</Link>
+            <Link id='shop-nav-2' to={'/Personalcare'} >Personal Care</Link>
+            <Link id='shop-nav-2' to={'/'} >About</Link>
+           
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>
