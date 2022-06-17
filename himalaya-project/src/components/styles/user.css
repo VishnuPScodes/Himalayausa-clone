@@ -68,4 +68,5 @@ color:
 }
 #btn-so:hover{
     border: 2px solid #333333;
+    transition: .5s;
 }

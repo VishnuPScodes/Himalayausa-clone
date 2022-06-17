@@ -5,7 +5,8 @@ import { actionTypes, authActionFailure, authActionRequest, authActionSuccess } 
 const initState={
     loading:false,
     auth:false,
-    error:false
+    error:false,
+    productLoading:false
 }
 
 
@@ -36,6 +37,18 @@ export const authReducer=((state=initState,action)=>{
                 ...state,
                 loading:false,
                 auth:false
+            }
+        }
+        case actionTypes.PRODUCT_LOADING_FALSE :{
+            return {
+                ...state,
+                productLoading:false
+            }
+        }
+        case actionTypes.PRODUCT_LOADING_TRUE :{
+            return {
+                ...state,
+                productLoading:true
             }
         }
         default :
