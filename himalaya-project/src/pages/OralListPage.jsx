@@ -5,10 +5,15 @@ import { BsHandbag } from 'react-icons/bs'
 import axios from 'axios'
 import { useDispatch ,useSelector} from 'react-redux'
 import { productLoadingFalse, productLoadingTrue } from '../redux/action'
-import { Spinner } from '@chakra-ui/react'
+import { Checkbox, CheckboxGroup, Radio, RadioGroup, Spinner } from '@chakra-ui/react'
+import { useParams } from 'react-router'
+import { useSearchParams } from 'react-router-dom'
 
 
 export const OralListPage=(()=>{
+    const[change,setChange]=useState(false)
+    const [searchParams,setSearchParams]=useSearchParams()
+    const [categoryValue,setCategoryValue]=useState(searchParams.getAll('category'))
     const loading=useSelector(state=>state.productLoading)
     const[items,setItems]=useState(12)
     const handleNext=(()=>{
@@ -18,17 +23,71 @@ export const OralListPage=(()=>{
     const [data,setData]=useState([])
     const dispatch=useDispatch()
     useEffect(()=>{
-      axios.get(`http://localhost:8080/oral?_limit=${items}`).then((res)=>{
+        if(categoryValue){
+            setSearchParams({category:categoryValue},{replace:true})
+            let params={
+                category:searchParams.getAll('category')
+            }
+            axios.get(`http://localhost:8080/oral?_limit=${items}`,{
+                params:{
+                    ...params
+                }
+            })
+            
+            .
+            
+            then((res)=>{
          setData(res.data)
          dispatch(productLoadingFalse())
       })
-    },[items])
+        }
+      
+    },[items,change])
+    const handleCheck=((v)=>{
+       console.log(v=='kids')
+       if(v=='kids'){ 
+        console.log('reached')
+        axios.get(`http://localhost:8080/oral?q=kid`).then((res)=>{
+            setData(res.data)
+        })
+        
+       }
+       else if(v=='adult'){
+        axios.get(`http://localhost:8080/oral?q=adult`).then((res)=>{
+        setData(res.data)
+    })
+    }
+    else if(v=='complete'){
+        axios.get(`http://localhost:8080/oral?q=complete`).then((res)=>{
+        setData(res.data)
+    })
+    }
+    else if(v=='whitening'){
+        axios.get(`http://localhost:8080/oral?q=whitening`).then((res)=>{
+        setData(res.data)
+    })
+    }
+
+    
+       else{
+        setChange(!change)
+       }
+       
+    })
     return <div
     > <h1>Oral Care</h1>
         <div style={{display:"flex"}}>
        
-            <div id="side-1">Filter
-            <div></div>
+            <div id="side-1"style={{marginTop:"100px"}}><h3>Product Type</h3>
+            <div style={{alignContend:"left"}}>
+                <RadioGroup onChange={handleCheck} >
+                    <Radio value={'kids'} >Kids</Radio> <br />
+                    <Radio value={'adult'} >Adult</Radio> <br />
+                    <Radio value={'complete'} >Complete Care</Radio> <br />
+                    <Radio value={'whitening'} >Whitening</Radio> <br />
+                    <Radio value={'reset'} >reset</Radio> <br />
+                </RadioGroup>
+            </div>
             </div>
             <div id="contend">
                 <div id='sort' >ff</div>
