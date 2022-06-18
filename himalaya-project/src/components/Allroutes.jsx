@@ -4,6 +4,7 @@ import { Checkout } from "../pages/Checkout"
 import { HerbalList } from "../pages/HerbalList"
 import { Home } from "../pages/Home"
 import { OralListPage } from "../pages/OralListPage"
+import { Payment } from "../pages/Payment"
 import { PersonalCare } from "../pages/PersonalCare"
 import { ProductDetails } from "../pages/ProductDetails"
 import { ProductDetailsHerbal } from "../pages/productDetails/ProductDetailsHerbal"
@@ -35,6 +36,7 @@ export const Allroutes=(()=>{
             <Cart/>
         </PrivateRoute>} />
         <Route path="/Checkout" element={<Checkout/>} />
+        <Route path="/Payment" element={<Payment/>} />
         
     </Routes>
 })

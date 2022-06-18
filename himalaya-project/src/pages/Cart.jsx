@@ -5,9 +5,9 @@ import '../components/styles/cart.css'
 import {AiOutlineDelete} from 'react-icons/ai'
 import { addCartQuantity } from '../redux/action'
 import { useSelector,useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 export const Cart=(()=>{
-    
+    const navigate=useNavigate()
     const [cartitems,setCartitems]=useState(1)
     const [cartdata,setCartdata]=useState([])
     const [deleted,setDeleted]=useState(false)
@@ -59,7 +59,9 @@ export const Cart=(()=>{
         <div id='total-main'>
             <div id='sub-total'>Subtotal:${cartdata[0]?.data.price}</div>
             <div id='g-total'>Grand Total:${cartdata[0]?.data.price}</div>
-            <button id='btn-cart-5'>PROCCEED TO CHECKOUT</button>
+            <button id='btn-cart-5' onClick={(()=>{
+                navigate('/Checkout')
+            })}>PROCCEED TO CHECKOUT</button>
         </div>
        
     </div>

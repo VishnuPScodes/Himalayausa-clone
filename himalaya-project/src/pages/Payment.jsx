@@ -17,7 +17,7 @@ import {
   } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-export const Checkout=(()=>{
+export const Payment=(()=>{
     const[data,setData]=useState([])
     const [user,setUser]=useState('');
     const navigate=useNavigate()
@@ -35,6 +35,7 @@ export const Checkout=(()=>{
         signOut(auth)
         navigate('/')
     })
+   
     return <div>
         <div style={{display:"flex"}}>
            <div id="left-check">
@@ -54,22 +55,20 @@ export const Checkout=(()=>{
                 <div onClick={handleLog} id='log-out-check'>Log out</div>
              </div>
             </div>
-            <div id='shipping-ad'>Shipping Address</div>
+            <div id='shipping-ad' >Payment</div>
             <div id='form-all'>
                 <div id='name' style={{display:"flex"}}>
                 <FormControl isRequired>
   <FormLabel htmlFor='first-name'>First name</FormLabel>
-  <Input style={{width:"45%",marginRight:"30px"}}  id='first-name' placeholder='First name' />
-  <Input style={{width:"45%"}}  id='first-name' placeholder='Last name' />
-  <Input   id='first-name' style={{marginTop:"20px"}} placeholder='Address' />
-  <Input   id='first-name' style={{marginTop:"20px"}} placeholder='Appartment,suite,etc' />
-  <Input   id='first-name' style={{marginTop:"20px"}} placeholder='City' />
   
-  <Select  placeholder='Country/region'>
-  
-  <option value="">United States</option>
-</Select>
-<Input   id='first-name' style={{marginTop:"20px"}} placeholder='Phone' />
+  <Input   id='first-name' style={{marginTop:"20px"}} placeholder='Cart Number' />
+  <Input   id='first-name' style={{marginTop:"20px"}} placeholder='Name on card' />
+  <div style={{display:"flex"}}>
+  <Input   id='first-name' style={{marginTop:"20px",width:"45%"}} type='date' placeholder='Expiry date' />
+  <Input   id='first-name' style={{marginTop:"20px",width:"45%",marginLeft:"20px"}} placeholder='Source Code' />
+  </div>
+ 
+
   
   
   
@@ -80,9 +79,12 @@ export const Checkout=(()=>{
            
             </div>
             <div id='box-cart' style={{display:"flex"}}>
-                    <button id='btn-check-out-1'>Continue to shipping </button>
+                    <button id='btn-check-out-1'onClick={(()=>{
+                alert('Your payment is completed')
+                navigate('/')
+            })}>Pay now</button>
                     <div id='link-check'>
-                        <Link  to={'/Cart'}>Return to cart</Link>
+                        <Link  to={'/Checkout'}>Return to shipping</Link>
                     </div>
                     </div>
             
@@ -104,7 +106,7 @@ export const Checkout=(()=>{
                 <Button style={{marginLeft:"20px",backgroundColor:"#c3c6c2"}}>Apply</Button>
             </div>
             <div id='total-right'>
-                <div>Sub Total:</div> <div id='total-calc'>${data[0]?.data?.price}</div></div>
+                <div>Sub Total:</div> <div id='total-calc'>${data[0]?.data.price}</div></div>
                 <div id='g-total-check'>
                  <div style={{marginLeft:"50px",marginTop:"30px"}}>Total:</div>
                  <div id='total-value'>${data[0]?.data?.price}</div>
