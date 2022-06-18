@@ -12,6 +12,23 @@
     border: 1px solid blue;
     height: 35px;
     width: 100%;
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 43px;
+    margin-top: 30px;
+}
+#sort-2{
+    border: 1px solid blue;
+    height: 35px;
+    width: 100%;
+    margin-top: 40px;
+    /* font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 43px; */
 }
 #single-data{
     border: 1px solid black;
@@ -60,7 +77,7 @@
     position: relative;
 }
 #health-interest{
-    margin-top: 150px;
+    margin-top: 130px;
     font-family: Poppins,sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -91,4 +108,18 @@
 }
 #all-property{
     margin-left: 40px;
+}
+#health-interest-2{
+    margin-top: 40px;
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    color: #333333;
+   margin-right: 70px;
+}
+#health-interest-2:hover{
+    color: #a3a3a3;
+    cursor: pointer;
 }

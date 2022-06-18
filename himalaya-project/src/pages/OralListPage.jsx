@@ -45,54 +45,49 @@ export const OralListPage=(()=>{
         }
       
     },[items,change])
-    const handleCheck=((v)=>{
-       console.log(v=='kids')
-       if(v=='kids'){ 
-        console.log('reached')
-        axios.get(`http://localhost:8080/oral?q=kid`).then((res)=>{
+    const handleCheck=((v)=>{   
+        if(v==''){
+            setChange(!change)
+        }   
+        axios.get(`http://localhost:8080/oral?q=${v}`).then((res)=>{
             setData(res.data)
         })
-        
-       }
-       else if(v=='adult'){
-        axios.get(`http://localhost:8080/oral?q=adult`).then((res)=>{
-        setData(res.data)
-    })
-    }
-    else if(v=='complete'){
-        axios.get(`http://localhost:8080/oral?q=complete`).then((res)=>{
-        setData(res.data)
-    })
-    }
-    else if(v=='whitening'){
-        axios.get(`http://localhost:8080/oral?q=whitening`).then((res)=>{
-        setData(res.data)
-    })
-    }
-
-    
-       else{
-        setChange(!change)
-       }
-       
     })
     return <div
-    > <h1>Oral Care</h1>
+    >
         <div style={{display:"flex"}}>
        
-            <div id="side-1"style={{marginTop:"100px"}}><h3>Product Type</h3>
-            <div style={{alignContend:"left"}}>
-                <RadioGroup onChange={handleCheck} >
+            <div id="side-1">
+            <div id='health-interest'>Product Type</div>
+          
+          <div id='all-property'> 
+                <RadioGroup id='single-property' onChange={handleCheck} >
                     <Radio value={'kids'} >Kids</Radio> <br />
                     <Radio value={'adult'} >Adult</Radio> <br />
                     <Radio value={'complete'} >Complete Care</Radio> <br />
                     <Radio value={'whitening'} >Whitening</Radio> <br />
                     <Radio value={'reset'} >reset</Radio> <br />
                 </RadioGroup>
-            </div>
+                </div>
+
+                {/* second sorted datas */}
+                <div id='health-interest-2'>Flavor</div>
+          
+          <div id='all-property'> 
+                <RadioGroup id='single-property' onChange={handleCheck} >
+                    <Radio value={''} >All</Radio> <br />
+                    <Radio value={'mint'} >Mint</Radio> <br />
+                    <Radio value={'peppermint'} >Peppermint</Radio> <br />
+                    <Radio value={'spearmint'} >Spearmint</Radio> <br />
+                    <Radio value={'cinnamon'} >Cinnamon</Radio> <br />
+                    <Radio value={'bubble'} >Bubble Gum</Radio> <br />
+                    <Radio value={'orange'} >Orange</Radio> <br />
+                </RadioGroup>
+                </div>    
             </div>
             <div id="contend">
-                <div id='sort' >ff</div>
+                <div id='sort' >Oral Care</div>
+                <div id='sort-2'></div>
                 <div id='data-map'>
                     {data.map((e)=>{
                         return (
