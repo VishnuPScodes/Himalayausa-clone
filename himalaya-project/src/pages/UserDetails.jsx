@@ -1,5 +1,6 @@
 
-import { signOut } from 'firebase/auth'
+import { onAuthStateChanged, signOut } from 'firebase/auth'
+import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router'
 import { auth } from '../components/firebase/firebase'
@@ -9,11 +10,16 @@ import { authActionLogout } from '../redux/action'
 
 
 export const UserDetails=(()=>{
+    const [user,setUser]=useState({})
+    onAuthStateChanged(auth,(currentUser)=>{
+        setUser(currentUser)
+    })
     const dispatch=useDispatch()
     const navigate=useNavigate()
     const signOutfxn=(()=>{
 
-        signOut(auth)
+        signOut(auth);
+        localStorage.setItem('auth',false)
         dispatch(authActionLogout())
         navigate('/')
     })
@@ -25,7 +31,7 @@ export const UserDetails=(()=>{
         <div id='order-details'>You haven't placed any orders yet.
         <div id='account'>Account Details</div>
         <div id='name'>Name:</div>
-        <div id='name'>Email:</div>
+        <div id='name'>Email:{user?.email}</div>
         <div id='name'>Address:</div>
         <div id='name'>Address 2:</div>
         <div id='name'>Country:</div>

@@ -62,6 +62,9 @@
     text-decoration: none;
     display: block;
   }
+  #cart-counter-pos{
+  
+  }
 
 
   #shop-nav-2{
@@ -79,4 +82,12 @@
 }
 #shop-nav-2:hover{
     color: #a3b49b;
+}
+#cart-4{
+  width: 20px;
+  height: 30px;
+  background-color: black;
+  color: white;
+  border-radius: 45%;
+  margin-right: 0px;
 }

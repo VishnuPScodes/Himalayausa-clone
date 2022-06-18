@@ -4,15 +4,27 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { BsBag } from 'react-icons/bs'
 import { useParams } from 'react-router'
+import { useDispatch } from 'react-redux'
+import { addCartQuantity } from '../../redux/action'
 // import '../components/styles/products.css'
 
 
 
 export const ProductDetailsPersonal=(()=>{
     const [singledata,setSingledata]=useState('')
+    const dispatch=useDispatch()
     const {id}=useParams()
     console.log('id recieved',id,'and type',typeof(id))
     const[cartitems,setCartitems]=useState(1)
+    
+    const addToCart=(()=>{
+        dispatch(addCartQuantity(cartitems))
+        let cartData={
+            qty:cartitems,
+            data:singledata
+        }
+        axios.post(`http://localhost:8080/cart`,cartData)
+    })
     useEffect(()=>{
         axios.get(`http://localhost:8080/personal/${id}`).then((res)=>{
             setSingledata(res.data)
@@ -43,7 +55,7 @@ export const ProductDetailsPersonal=(()=>{
                         })}>+</div>
                        
                     </div>
-                    <Button id='addtocart'> <BsBag/> ADD TO CART</Button>
+                    <Button id='addtocart' onClick={addToCart}> <BsBag/> ADD TO CART</Button>
                     {/* <Button>-</Button> <Button>+</Button> */}
                 </div>
                 <Button id='buy-it'>BUY IT NOW</Button>

@@ -42,6 +42,7 @@ import {
   import './styles/nav.css'
 import { useNavigate } from 'react-router';
 import {Link} from 'react-router-dom'
+import { CartCounter } from './CartCounter';
   
   export const Navbar=()=> {
     
@@ -109,12 +110,16 @@ import {Link} from 'react-router-dom'
       </CustomCard>
     </Tooltip>
     <Tooltip label='Cart'>
+     
       <CustomCard>
       <BsBag onClick={(()=>{
         navigate('/Cart')
       })}/>
       </CustomCard>
-    </Tooltip>     
+     
+    </Tooltip> 
+    <div id='cart-counter-pos'> {<CartCounter />}</div>    
+    
           </Stack>
         </Flex>
   

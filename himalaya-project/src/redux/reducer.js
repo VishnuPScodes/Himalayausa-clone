@@ -7,7 +7,7 @@ const initState={
     auth:false,
     error:false,
     productLoading:false,
-    cartquantity:1
+    cartquantity:[]
 }
 
 

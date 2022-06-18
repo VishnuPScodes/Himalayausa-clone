@@ -39,3 +39,58 @@
     width: 150px;
     margin-left: 100px;
 }
+#delete-icon{
+    margin-top: 70px;
+    font-size: 30px;
+    margin-left: 40px;
+}
+#delete-icon:hover{
+    color: #a3a3a3;
+    cursor: pointer;
+}
+#total-main{
+    border: 1px solid black;
+    height: 230px;
+    width: 560px;
+    margin-left: 630px;
+    margin-bottom: 50px;
+    background-color: #66765f;
+}
+#sub-total{
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 35px;
+    color: #eef2f0;
+    text-align: center;
+    padding-top: 5px;
+    margin-top: 25px;
+}
+#g-total{
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 43px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px;
+}
+#btn-cart-5{
+    width: 90%;
+    height: 40px;
+    margin: auto;
+    margin-top: 20px;
+    background: #a3b49b;
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 33px;
+    color: #ffffff;
+}
+#btn-cart-5:hover{
+    background: #ffffff;
+    color:#66765f ;
+}

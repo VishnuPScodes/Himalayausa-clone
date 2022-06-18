@@ -56,6 +56,7 @@ import { authActionRequest, authActionSuccess } from '../redux/action';
       try{
         const user=await createUserWithEmailAndPassword(auth,formData.email,formData.password)
         console.log('user',user)
+        localStorage.setItem('auth',true)
         dispatch(authActionSuccess())
         navigate('/')
 
