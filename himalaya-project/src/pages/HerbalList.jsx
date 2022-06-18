@@ -25,6 +25,7 @@ export const HerbalList=(()=>{
     const [data,setData]=useState([])
     const dispatch=useDispatch()
     useEffect(()=>{
+        dispatch(productLoadingTrue())
       axios.get(`http://localhost:8080/herbal?_limit=${items}`).then((res)=>{
          setData(res.data)
          dispatch(productLoadingFalse())
@@ -32,6 +33,7 @@ export const HerbalList=(()=>{
     },[items])
     return <div
     > 
+    
         <div style={{display:"flex"}}>
        
             <div id="side-1">

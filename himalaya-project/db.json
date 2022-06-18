@@ -403,5 +403,29 @@
       "des": "All around the world in many different cultures, countries, and traditional systems of healthcare, Garlic has been used consistently for heart health, cardiovascular and immune support. For wellness of the heart, Garlic remains one of the whole world’s favorite gifts from nature.*  Suggested Use  Adults take 2 caplets twice daily after meals",
       "id": 34
     }
+  ],
+  "cart": [
+    {
+      "qty": 4,
+      "data": {
+        "url": "https://cdn.shopify.com/s/files/1/0399/1728/9633/products/HimalayaBambooToothpaste-Tube_Front_1024x1024.png?v=1613065864",
+        "name": "Bamboo & Sea Salt Whitening Antiplaque Toothpaste",
+        "price": "5.99",
+        "des": "Get the smile you’ve been looking for with gentle Bamboo, which is famous for its strong fibers and silica, and purified Sea Salt for a clean, fresh mouth and healthy-looking gums.  Suggested Use  Brush thoroughly after each meal, or at least twice a day, or as directed by a dentist. Consult your dentist for children under 2 years. Children under 6 years should use a pea-sized amount under adult supervision.",
+        "id": 1
+      },
+      "id": 1
+    },
+    {
+      "qty": 1,
+      "data": {
+        "url": "https://cdn.shopify.com/s/files/1/0399/1728/9633/products/Neem-and-Pom---Box-Tube_1024x1024.png?v=1597744049",
+        "name": "Neem & Pomegranate Original Toothpaste",
+        "price": "5.99",
+        "des": "Did you know that Neem and Pomegranate are two of history’s most famous traditional choices for cleaning? Neem and Pomegranate help fight plaque, brighten your teeth, and leave your mouth feeling clean and fresh, giving you the confidence to flash a vibrant smile.  Suggested Use  Brush thoroughly after each meal, or at least twice a day, or as directed by a dentist. Consult your dentist for children under 2 years. Children under 6 years should use a pea-sized amount under adult supervision.",
+        "id": 6
+      },
+      "id": 2
+    }
   ]
 }

@@ -13,6 +13,8 @@ export const actionTypes={
     DATA_ACTION_REQUEST:"DATA_ACTION_REQUEST",
     DATA_ACTION_SUCCESS:"DATA_ACTION_SUCCESS",
     DATA_ACTION_FAILURE:"DATA_ACTION_FAILURE",
+
+    ADD_CART_QUANTITY:"ADD_CART_QUANTITY"
    
 
 }
@@ -78,11 +80,16 @@ export const productLoadingFalse=(()=>{
     }
 })
 
+export const addCartQuantity=((data)=>{
+    return {
+        type:actionTypes.ADD_CART_QUANTITY,
+        payload:data
+    }
+})
 
-
-// export const fetchData=((payload)=>{
-//     return (dispatch)=>{
-//         dispatch(dataActionRequest())
-//         axios.get('/')
-//     }
-// })
+    // export const fetchData=((payload)=>{
+    //     return (dispatch)=>{
+    //         dispatch(dataActionRequest())
+    //         axios.get('/')
+    //     }
+    // })

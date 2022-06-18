@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom"
+import { Cart } from "../pages/Cart"
 import { HerbalList } from "../pages/HerbalList"
 import { Home } from "../pages/Home"
 import { OralListPage } from "../pages/OralListPage"
@@ -29,6 +30,10 @@ export const Allroutes=(()=>{
         <Route path="/ProductDetails/:id" element={<ProductDetails/>} />
         <Route path="/ProductDetailsHerbal/:id" element={<ProductDetailsHerbal/>} />
         <Route path="/ProductDetailsPersonal/:id" element={<ProductDetailsPersonal/>} />
+        <Route path="/Cart" element={<PrivateRoute>
+            <Cart/>
+        </PrivateRoute>} />
+        
         
     </Routes>
 })

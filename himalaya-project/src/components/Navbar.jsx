@@ -110,7 +110,9 @@ import {Link} from 'react-router-dom'
     </Tooltip>
     <Tooltip label='Cart'>
       <CustomCard>
-      <BsBag/>
+      <BsBag onClick={(()=>{
+        navigate('/Cart')
+      })}/>
       </CustomCard>
     </Tooltip>     
           </Stack>
