@@ -98,7 +98,7 @@ export const OralListPage=(()=>{
                             <img src={e.url} alt="image" />
                         
                         <div style={{textAlign:"left"}}>Bamboo & Sea Salt Whitening Antiplaque Toothpaste</div>
-                        <div style={{display:"flex",height:"45px",border:"1px solid blue",marginTop:"20px"}}>
+                        <div style={{display:"flex",height:"45px",marginTop:"20px"}}>
                             <div id='bag-btn-3' style={{width:"50px",backgroundColor:"#a3b49b"}} >
                              <BsHandbag style={{margin:"auto",marginTop:"5px",height:"30px"}} />
                             </div>
