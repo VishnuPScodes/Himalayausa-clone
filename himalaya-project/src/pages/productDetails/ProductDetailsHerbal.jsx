@@ -3,13 +3,15 @@ import { Button, Spinner } from '@chakra-ui/react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { BsBag } from 'react-icons/bs'
-import { useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 // import '../components/styles/products.css'
 import { useDispatch ,useSelector } from 'react-redux'
-import { addCartQuantity, productLoadingFalse, productLoadingTrue } from '../../redux/action'
+import { addCartQuantity, dataActionFailure, dataActionRequest, productLoadingFalse, productLoadingTrue } from '../../redux/action'
 
 
 export const ProductDetailsHerbal=(()=>{
+    const cartloading=useSelector(state=>state.cartloading)
+    const navigate=useNavigate()
     const loading=useSelector(state=>state.productLoading)
     const dispatch=useDispatch()
     const [singledata,setSingledata]=useState('')
@@ -18,6 +20,11 @@ export const ProductDetailsHerbal=(()=>{
     const[cartitems,setCartitems]=useState(1)
    
     const addToCart=(()=>{
+        const auth=localStorage.getItem('auth');
+
+        if(auth=='false'){
+            navigate('/Login')
+        }
         dispatch(addCartQuantity(cartitems))
         let cartData={
             qty:cartitems,
@@ -61,9 +68,18 @@ export const ProductDetailsHerbal=(()=>{
                     {/* <Button>-</Button> <Button>+</Button> */}
                 </div>
                 <Button id='buy-it' onClick={(()=>{
+                     const auth=localStorage.getItem('auth');
+                    if(auth=='false'){
+                        navigate('/Login')
+                    }
+                    else{
+                        dispatch(dataActionRequest())
+                        axios.post(`https://himalayausa-clone.herokuapp.com/cart/`,cartitems)
+                        dispatch(dataActionFailure())
+                        navigate('/Checkout')
+                    }
                     
-                    navigate('/Checkout')
-                })}>BUY IT NOW</Button>
+                })}>{cartloading==true?<Spinner/>:"BUY IT NOW"}</Button>
                 <div id='des-pro'>{singledata.des}</div>
             </div>
           </div>

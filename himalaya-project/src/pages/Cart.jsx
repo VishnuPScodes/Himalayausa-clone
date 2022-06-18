@@ -35,10 +35,10 @@ export const Cart=(()=>{
                       })
                 })} id='delete-icon'/></div>
                 <div id='c-img'>
-                    <img src={e.data.url} height="100%"  alt="" />
+                    <img src={e.data?.url} height="100%"  alt="" />
                 </div>
-                <Link to={`/ProductDetails/${e.data.id}`} id='c-name'>{e.data.name}</Link>
-                <div id='c-price'>${e.data.price}</div>
+                <Link to={`/ProductDetails/${e.data?.id}`} id='c-name'>{e.data?.name}</Link>
+                <div id='c-price'>${e.data?.price}</div>
                 <div id='plus-btns' style={{marginTop:"60px"}}>
                             <div id='btn-1-min' onClick={(()=>{
                                 if(cartitems!=1){

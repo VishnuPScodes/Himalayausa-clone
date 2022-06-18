@@ -81,6 +81,10 @@ export const Payment=(()=>{
             <div id='box-cart' style={{display:"flex"}}>
                     <button id='btn-check-out-1'onClick={(()=>{
                 alert('Your payment is completed')
+                for(let i=0;i<40;i++){
+                    axios.delete(`https://himalayausa-clone.herokuapp.com/cart/${i}`)
+                }
+               
                 navigate('/')
             })}>Pay now</button>
                     <div id='link-check'>

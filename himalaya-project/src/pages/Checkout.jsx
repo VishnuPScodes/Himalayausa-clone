@@ -33,6 +33,7 @@ export const Checkout=(()=>{
     })
     const handleLog=(()=>{
         signOut(auth)
+        localStorage.setItem('auth',false)
         navigate('/')
     })
     return <div>
@@ -95,8 +96,8 @@ export const Checkout=(()=>{
                 return (
                     <div id='cart-item-check'>
                     <div id='img-cart-c'><img height={'100%'} src={e.data?.url} alt="" /></div>
-                    <div id='cart-name-c' style={{textAlign:"left"}}>{e.data.name}</div>
-                    <div id='cart-price-c'>${e.data.price}</div>
+                    <div id='cart-name-c' style={{textAlign:"left"}}>{e.data?.name}</div>
+                    <div id='cart-price-c'>${e.data?.price}</div>
                 </div>
                 )
             })}

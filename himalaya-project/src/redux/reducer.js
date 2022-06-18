@@ -7,7 +7,8 @@ const initState={
     auth:false,
     error:false,
     productLoading:false,
-    cartquantity:[]
+    cartquantity:[],
+    cartloading:false
 }
 
 
@@ -57,6 +58,19 @@ export const authReducer=((state=initState,action)=>{
             return {
                 ...state,
                 cartquantity:action.payload
+            }
+        }
+        case actionTypes.DATA_ACTION_FAILURE :{
+            return {
+                ...state,
+                cartloading:false
+
+            }
+        }
+        case actionTypes.DATA_ACTION_REQUEST :{
+            return {
+                ...state,
+                cartloading:true
             }
         }
         default :

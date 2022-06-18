@@ -19,12 +19,19 @@ export const ProductDetailsPersonal=(()=>{
     const[cartitems,setCartitems]=useState(1)
     
     const addToCart=(()=>{
-        dispatch(addCartQuantity(cartitems))
-        let cartData={
-            qty:cartitems,
-            data:singledata
+        const auth=localStorage.getItem('auth');
+        if(auth=='false'){
+            navigate('/Login')
         }
-        axios.post(`https://himalayausa-clone.herokuapp.com/cart`,cartData)
+        else{
+            dispatch(addCartQuantity(cartitems))
+            let cartData={
+                qty:cartitems,
+                data:singledata
+            }
+            axios.post(`https://himalayausa-clone.herokuapp.com/cart`,cartData)
+        }
+     
     })
     useEffect(()=>{
         dispatch(productLoadingTrue())
@@ -61,7 +68,18 @@ export const ProductDetailsPersonal=(()=>{
                     <Button id='addtocart' onClick={addToCart}> <BsBag/> ADD TO CART</Button>
                     {/* <Button>-</Button> <Button>+</Button> */}
                 </div>
-                <Button id='buy-it'>BUY IT NOW</Button>
+                <Button id='buy-it' onClick={(()=>{
+                      const auth=localStorage.getItem('auth');
+                      if(auth=='false'){
+                          navigate('/Login')
+                      }
+                      else{
+                          dispatch(dataActionRequest())
+                          axios.post(`https://himalayausa-clone.herokuapp.com/cart/`,cartitems)
+                          dispatch(dataActionFailure())
+                          navigate('/Checkout')
+                      }
+                })} >BUY IT NOW</Button>
                 <div id='des-pro'>{singledata.des}</div>
             </div>
           </div>
