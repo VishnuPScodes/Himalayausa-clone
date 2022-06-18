@@ -6,7 +6,7 @@ import axios from 'axios'
 import { useDispatch ,useSelector} from 'react-redux'
 import { productLoadingFalse, productLoadingTrue } from '../redux/action'
 import { Checkbox, CheckboxGroup, Radio, RadioGroup, Spinner } from '@chakra-ui/react'
-import { useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 import { useSearchParams } from 'react-router-dom'
 
 
@@ -22,6 +22,8 @@ export const OralListPage=(()=>{
     })
     const [data,setData]=useState([])
     const dispatch=useDispatch()
+    const navigate=useNavigate()
+    
     useEffect(()=>{
         if(categoryValue){
             setSearchParams({category:categoryValue},{replace:true})
@@ -94,7 +96,9 @@ export const OralListPage=(()=>{
                 <div id='data-map'>
                     {data.map((e)=>{
                         return (
-                            <div key={e.id} id='single-data'>
+                            <div onClick={(()=>{
+                                navigate(`/ProductDetails/${e.id}`)
+                            })} key={e.id} id='single-data'>
                        
                             <img src={e.url} alt="image" />
                         

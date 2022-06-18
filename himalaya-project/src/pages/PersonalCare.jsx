@@ -6,9 +6,11 @@ import axios from 'axios'
 import { useDispatch ,useSelector} from 'react-redux'
 import { productLoadingFalse, productLoadingTrue } from '../redux/action'
 import { Spinner } from '@chakra-ui/react'
+import { useNavigate } from 'react-router'
 
 
 export const PersonalCare=(()=>{
+    const navigate=useNavigate()
     const loading=useSelector(state=>state.productLoading)
     const[items,setItems]=useState(12)
     const handleNext=(()=>{
@@ -33,7 +35,9 @@ export const PersonalCare=(()=>{
                 <div id='data-map'>
                     {data.map((e)=>{
                         return (
-                            <div key={e.id} id='single-data'>
+                            <div onClick={(()=>{
+                                navigate(`/ProductDetailsPersonal/${e.id}`)
+                            })} key={e.id} id='single-data'>
                        
                             <img src={e.url} alt="image" />
                         

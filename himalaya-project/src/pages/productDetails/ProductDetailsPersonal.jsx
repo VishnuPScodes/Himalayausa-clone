@@ -4,17 +4,17 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { BsBag } from 'react-icons/bs'
 import { useParams } from 'react-router'
-import '../components/styles/products.css'
+// import '../components/styles/products.css'
 
 
 
-export const ProductDetails=(()=>{
+export const ProductDetailsPersonal=(()=>{
     const [singledata,setSingledata]=useState('')
     const {id}=useParams()
     console.log('id recieved',id,'and type',typeof(id))
     const[cartitems,setCartitems]=useState(1)
     useEffect(()=>{
-        axios.get(`http://localhost:8080/oral/${id}`).then((res)=>{
+        axios.get(`http://localhost:8080/personal/${id}`).then((res)=>{
             setSingledata(res.data)
         })
     },[])
