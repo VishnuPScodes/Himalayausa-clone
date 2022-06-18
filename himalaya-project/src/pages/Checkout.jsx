@@ -1,8 +1,40 @@
 
+import { useEffect, useState } from 'react'
+import { BsFilePersonFill } from 'react-icons/bs'
 import '../components/styles/check.css'
-
-
+import { auth } from '../components/firebase/firebase'
+import { onAuthStateChanged, signOut } from 'firebase/auth'
+import { useNavigate } from 'react-router'
+import {
+    FormControl,
+    Input,
+    FormLabel,
+    Select,
+    FormErrorMessage,
+    FormHelperText,
+    Button
+    
+  } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
 export const Checkout=(()=>{
+    const[data,setData]=useState([])
+    const [user,setUser]=useState('');
+    const navigate=useNavigate()
+    useEffect(()=>{
+        axios.get(`http://localhost:8080/cart`).then((res)=>{
+            setData(res.data)
+        })
+    },[])
+    console.log('data at chck',data)
+    onAuthStateChanged(auth,(currentUser)=>{
+        setUser(currentUser)
+       
+    })
+    const handleLog=(()=>{
+        signOut(auth)
+        navigate('/')
+    })
     return <div>
         <div style={{display:"flex"}}>
            <div id="left-check">
@@ -15,12 +47,64 @@ export const Checkout=(()=>{
             </div>
             <div>Or</div>
             <div id='txt'>Contact Information</div>
-            <div id='person-logo'>
-                <img src="" alt="" />
+            <div id='person-logo-div'>
+             <img id='person-logo' src="https://www.iconpacks.net/icons/1/free-user-icon-295-thumb.png" alt="" />
+             <div>
+                <div>{user?.email}</div>
+                <div onClick={handleLog} id='log-out-check'>Log out</div>
+             </div>
             </div>
+            <div id='shipping-ad'>Shipping Address</div>
+            <div id='form-all'>
+                <div id='name' style={{display:"flex"}}>
+                <FormControl isRequired>
+  <FormLabel htmlFor='first-name'>First name</FormLabel>
+  <Input style={{width:"45%",marginRight:"30px"}}  id='first-name' placeholder='First name' />
+  <Input style={{width:"45%"}}  id='first-name' placeholder='Last name' />
+  <Input   id='first-name' style={{marginTop:"20px"}} placeholder='Address' />
+  <Input   id='first-name' style={{marginTop:"20px"}} placeholder='Appartment,suite,etc' />
+  <Input   id='first-name' style={{marginTop:"20px"}} placeholder='City' />
+  
+  <Select  placeholder='Country/region'>
+  
+  <option value="">United States</option>
+</Select>
+<Input   id='first-name' style={{marginTop:"20px"}} placeholder='Phone' />
+  
+  
+  
+</FormControl>
+
+                </div>
+           
+           
+            </div>
+            <div id='box-cart' style={{display:"flex"}}>
+                    <button id='btn-check-out-1'>Continue to shipping </button>
+                    <div id='link-check'>
+                        <Link  to={'/Cart'}>Return to cart</Link>
+                    </div>
+                    </div>
+            
            </div>
            
-           <div id="right-check"></div>
+           <div id="right-check">
+            <div id='cart-item-check'>
+                <div id='img-cart-c'><img height={'100%'} src='' alt="" /></div>
+                <div id='cart-name-c'></div>
+                <div id='cart-price-c'>$</div>
+            </div>
+            <div id='coupon'>
+                <Input placeholder='Coupon' style={{width:"70%",marginTop:"10px"}} />
+                <Button style={{marginLeft:"20px",backgroundColor:"#c3c6c2"}}>Apply</Button>
+            </div>
+            <div id='total-right'>
+                <div>Sub Total:</div> <div id='total-calc'>$</div></div>
+                <div id='g-total-check'>
+                 <div style={{marginLeft:"50px",marginTop:"30px"}}>Total:</div>
+                 <div id='total-value'>$</div>
+                </div>
+           </div>
         </div>
     </div>
 })

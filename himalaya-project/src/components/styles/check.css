@@ -3,7 +3,7 @@
 
 #left-check{
     border: 1px solid blue;
-    height: 900px;
+    height: 100%;
     width: 45%;
     margin: auto;
 
@@ -13,6 +13,7 @@
     height: 900px;
     width: 45%;
     margin: auto;
+    background-color: #f4f7f3;
 }
 #express-check{
     border: 1px solid blue;
@@ -42,10 +43,108 @@
     text-align: left;
     margin-left: 50px;
 }
-#person-logo{
+#person-logo-div{
     border: 1px solid blue;
     height: 80px;
     width: 70%;
     margin-left: 50px;
     display: flex;
+}
+#person-logo{
+    font-size: 40px;
+    text-align: left;
+    margin-left: 0px;
+    height: 80px;
+   
+}
+#log-out-check{
+    color: #a3a3a3;
+    text-align: left;
+}
+#log-out-check:hover{
+    color: #c7c6c6;
+    cursor: pointer;
+    
+}
+#shipping-ad{
+    text-align: left;
+    margin-left: 40px;
+    margin-top: 20px;
+
+}
+#form-all{
+    margin-left: 50px;
+}
+#name{
+    align-items: left;
+}
+#btn-check-out-1{
+    height: 55px;
+    width: 180px;
+    border-radius: 5px;
+    background-color: #a3b49b;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+#box-cart{
+    align-items: left;
+}
+
+#link-check{
+    color: #a3a3a3;
+    margin-left: 20px;
+    margin-top: 40px;
+   
+}
+#link-check:hover{
+    color: #c7c6c6;
+    cursor: pointer;
+    
+}
+#cart-item-check{
+    border-bottom: 1px solid #c3c6c2;
+    height: 70px;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+}
+#img-cart-c{
+    border: 1px solid blue;
+    height: 100%;
+    width: 70px;
+}
+#cart-name-c{
+    border: 1px solid blue;
+    height: 100%;
+    width: 300px;
+}
+#coupon{
+    border-bottom: 1px solid #c3c6c2;
+    height: 70px;
+    
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    align-items: left;
+}
+#total-right{
+    border-bottom: 1px solid #c3c6c2;
+    height: 100px;
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    display: flex;
+    align-items: left;
+}
+#total-calc{
+    margin-left: 300px;
+}
+#g-total-check{
+    align-items: left;
+    text-align: left;
+}
+#total-value{
+    margin-left: 430px;
+    margin-bottom: 30px;
 }
