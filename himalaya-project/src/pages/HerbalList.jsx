@@ -31,7 +31,7 @@ export const HerbalList=(()=>{
       })
     },[items])
     return <div
-    > <h1>Oral Care</h1>
+    > 
         <div style={{display:"flex"}}>
        
             <div id="side-1">
@@ -80,7 +80,7 @@ export const HerbalList=(()=>{
                 
             </div>
             <div id="contend">
-                <div id='sort' >ff</div>
+                <div id='sort' >Herbal Supplements</div>
                 <div id='data-map'>
                     {data.map((e)=>{
                         return (
