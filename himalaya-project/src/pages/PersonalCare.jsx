@@ -29,6 +29,7 @@ export const PersonalCare=(()=>{
     const [data,setData]=useState([])
     const dispatch=useDispatch()
     useEffect(()=>{
+        dispatch(productLoadingTrue())
       axios.get(`http://localhost:8080/personal?_limit=${items}`).then((res)=>{
          setData(res.data)
          dispatch(productLoadingFalse())
@@ -36,49 +37,50 @@ export const PersonalCare=(()=>{
     },[items,change])
     return <div
     > 
-        <div style={{display:"flex"}}>
+    {loading==true?<Spinner/>:<div style={{display:"flex"}}>
        
-            <div id="side-1">
-            <div id='health-interest'>Product Type</div>
-            <div id='all-property'> 
-                <RadioGroup id='single-property' onChange={handleCheck} >
-                    <Radio value={''} >All</Radio> <br />
-                    <Radio value={'face'} >Face Care</Radio> <br />
-                    <Radio value={'bar'} >Cleansing Bars</Radio> <br />
-                    <Radio value={'balm'} >Balms</Radio> <br />
-                    
-                </RadioGroup>
-                </div>
-            </div>
-            <div id="contend">
-            <div id='sort' >Personal Care</div>
-            <div id='sort-2'></div>    
-                <div id='data-map'>
-                    {data.map((e)=>{
-                        return (
-                            <div onClick={(()=>{
-                                navigate(`/ProductDetailsPersonal/${e.id}`)
-                            })} key={e.id} id='single-data'>
-                       
-                            <img src={e.url} alt="image" />
-                        
-                        <div style={{textAlign:"left"}}>{e.name}</div>
-                        <div style={{display:"flex",height:"45px",marginTop:"20px"}}>
-                            <div style={{width:"50px",backgroundColor:"#a3b49b"}} >
-                             <BsHandbag style={{margin:"auto",marginTop:"5px",height:"30px"}} />
-                            </div>
-                            <div id='price-3'>${e.price}</div>
-                            <div id='hover-cart' style={{backgroundColor:"#a3b49b",width:"110px"}}>ADD TO CART</div>
-                        </div>
-                    </div>
+       <div id="side-1">
+       <div id='health-interest'>Product Type</div>
+       <div id='all-property'> 
+           <RadioGroup id='single-property' onChange={handleCheck} >
+               <Radio value={''} >All</Radio> <br />
+               <Radio value={'face'} >Face Care</Radio> <br />
+               <Radio value={'bar'} >Cleansing Bars</Radio> <br />
+               <Radio value={'balm'} >Balms</Radio> <br />
+               
+           </RadioGroup>
+           </div>
+       </div>
+       <div id="contend">
+       <div id='sort' >Personal Care</div>
+       <div id='sort-2'></div>    
+           <div id='data-map'>
+               {data.map((e)=>{
+                   return (
+                       <div onClick={(()=>{
+                           navigate(`/ProductDetailsPersonal/${e.id}`)
+                       })} key={e.id} id='single-data'>
+                  
+                       <img src={e.url} alt="image" />
+                   
+                   <div style={{textAlign:"left"}}>{e.name}</div>
+                   <div style={{display:"flex",height:"45px",marginTop:"20px"}}>
+                       <div style={{width:"50px",backgroundColor:"#a3b49b"}} >
+                        <BsHandbag style={{margin:"auto",marginTop:"5px",height:"30px"}} />
+                       </div>
+                       <div id='price-3'>${e.price}</div>
+                       <div id='hover-cart' style={{backgroundColor:"#a3b49b",width:"110px"}}>ADD TO CART</div>
+                   </div>
+               </div>
 
-                        )
-                    })}
-                
-                </div>
-                <button id='btn-so' onClick={handleNext}>{loading==false?"Show more":<Spinner/>}</button>
-            </div>
-        </div>
+                   )
+               })}
+           
+           </div>
+           <button id='btn-so' onClick={handleNext}>{loading==false?"Show more":<Spinner/>}</button>
+       </div>
+   </div>}
+        
      
     </div>
 })
