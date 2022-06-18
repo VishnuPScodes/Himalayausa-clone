@@ -15,6 +15,15 @@ import {
     useBreakpointValue,
     useDisclosure,
   } from '@chakra-ui/react';
+  import {
+    Drawer,
+    DrawerBody,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerOverlay,
+    DrawerContent,
+    DrawerCloseButton,
+  } from '@chakra-ui/react'
   import { Fade, ScaleFade, Slide, SlideFade } from '@chakra-ui/react'
 
   import { Tag } from '@chakra-ui/react';
@@ -35,9 +44,11 @@ import { useNavigate } from 'react-router';
 import {Link} from 'react-router-dom'
   
   export const Navbar=()=> {
+    
+    const [placement, setPlacement] = React.useState('top')
     const { isOpen, onToggle } = useDisclosure();
     const navigate=useNavigate()
-  
+    
     return <div> 
       <Box  id='navbar-main'>
         <Flex
@@ -93,8 +104,9 @@ import {Link} from 'react-router-dom'
             </Button> */}
    <Tooltip label='Search'>
       <CustomCard>
-      <RiSearchLine/>
+      <RiSearchLine  />
       </CustomCard>
+     
     </Tooltip>
     <Tooltip label='My Account'>
       <CustomCard>
@@ -137,9 +149,7 @@ import {Link} from 'react-router-dom'
         </Collapse>
         
       </Box>
-      <div id='nav-drop-down'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non sint vero error et enim ullam, voluptas nam maiores? Explicabo dicta optio quas quae sed qui! Rerum, consequatur quibusdam. Totam, similique?
-      </div>
+      
       </div>
   }
   
@@ -278,6 +288,40 @@ import {Link} from 'react-router-dom'
   }
  
 
+
+
+  // drawer animation
+
+  function PlacementExample() {
+  
+  
+    return (
+      <>
+        {/* <RadioGroup defaultValue={placement} onChange={setPlacement}>
+          <Stack direction='row' mb='4'>
+            <Radio value='top'>Top</Radio>
+            <Radio value='right'>Right</Radio>
+            <Radio value='bottom'>Bottom</Radio>
+            <Radio value='left'>Left</Radio>
+          </Stack>
+        </RadioGroup> */}
+        <Button colorScheme='blue' onClick={onOpen}>
+          Open
+        </Button>
+        <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
+          <DrawerOverlay />
+          <DrawerContent>
+            <DrawerHeader borderBottomWidth='1px'>Basic Drawer</DrawerHeader>
+            <DrawerBody>
+              <p>Some contents...</p>
+              <p>Some contents...</p>
+              <p>Some contents...</p>
+            </DrawerBody>
+          </DrawerContent>
+        </Drawer>
+      </>
+    )
+  }
     
   
  

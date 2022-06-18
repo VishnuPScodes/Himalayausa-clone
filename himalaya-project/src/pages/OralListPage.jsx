@@ -100,9 +100,12 @@ export const OralListPage=(()=>{
                         
                         <div style={{textAlign:"left"}}>Bamboo & Sea Salt Whitening Antiplaque Toothpaste</div>
                         <div style={{display:"flex",height:"45px",border:"1px solid blue",marginTop:"20px"}}>
-                            <div style={{width:"50px",backgroundColor:"#a3b49b"}} >
+                            <div id='bag-btn-3' style={{width:"50px",backgroundColor:"#a3b49b"}} >
                              <BsHandbag style={{margin:"auto",marginTop:"5px",height:"30px"}} />
                             </div>
+                            <div id='price-3'>${e.price}</div>
+                            
+                            <div id='hover-cart' style={{backgroundColor:"#a3b49b",width:"110px"}}>ADD TO CART</div>
                         </div>
                     </div>
 
