@@ -5,8 +5,9 @@ import '../components/styles/cart.css'
 import {AiOutlineDelete} from 'react-icons/ai'
 import { addCartQuantity } from '../redux/action'
 import { useSelector,useDispatch } from 'react-redux'
-
+import { Link } from 'react-router-dom'
 export const Cart=(()=>{
+    
     const [cartitems,setCartitems]=useState(1)
     const [cartdata,setCartdata]=useState([])
     const [deleted,setDeleted]=useState(false)
@@ -17,6 +18,7 @@ export const Cart=(()=>{
             dispatch(addCartQuantity(res.data))
         })
     },[deleted])
+    
     const cartDataRedux=useSelector(state=>state.cartquantity)
     console.log('cart data',cartDataRedux)
     var total=0
@@ -35,7 +37,7 @@ export const Cart=(()=>{
                 <div id='c-img'>
                     <img src={e.data.url} height="100%"  alt="" />
                 </div>
-                <div id='c-name'>{e.data.name}</div>
+                <Link to={`/ProductDetails/${e.data.id}`} id='c-name'>{e.data.name}</Link>
                 <div id='c-price'>${e.data.price}</div>
                 <div id='plus-btns' style={{marginTop:"60px"}}>
                             <div id='btn-1-min' onClick={(()=>{
@@ -55,8 +57,8 @@ export const Cart=(()=>{
             )
         })}
         <div id='total-main'>
-            <div id='sub-total'>Subtotal:</div>
-            <div id='g-total'>Grand Total:</div>
+            <div id='sub-total'>Subtotal:${cartdata[0]?.data.price}</div>
+            <div id='g-total'>Grand Total:${cartdata[0]?.data.price}</div>
             <button id='btn-cart-5'>PROCCEED TO CHECKOUT</button>
         </div>
        

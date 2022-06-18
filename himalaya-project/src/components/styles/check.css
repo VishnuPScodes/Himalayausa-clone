@@ -1,0 +1,51 @@
+
+
+
+#left-check{
+    border: 1px solid blue;
+    height: 900px;
+    width: 45%;
+    margin: auto;
+
+}
+#right-check{
+    border: 1px solid blue;
+    height: 900px;
+    width: 45%;
+    margin: auto;
+}
+#express-check{
+    border: 1px solid blue;
+    height: 90px;
+    width: 85%;
+    margin-left: 50px;
+  
+    display: flex;
+
+}
+#img-check{
+    height: 80px;
+}
+#img-check-2{
+    height: 25px;
+    margin-top: 30px;
+}
+#img-check-3{
+    height: 25px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+#express-txt{
+    margin-top: 50px;
+}
+#txt{
+    text-align: left;
+    margin-left: 50px;
+}
+#person-logo{
+    border: 1px solid blue;
+    height: 80px;
+    width: 70%;
+    margin-left: 50px;
+    display: flex;
+}

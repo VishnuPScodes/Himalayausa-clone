@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import { Cart } from "../pages/Cart"
+import { Checkout } from "../pages/Checkout"
 import { HerbalList } from "../pages/HerbalList"
 import { Home } from "../pages/Home"
 import { OralListPage } from "../pages/OralListPage"
@@ -33,7 +34,7 @@ export const Allroutes=(()=>{
         <Route path="/Cart" element={<PrivateRoute>
             <Cart/>
         </PrivateRoute>} />
-        
+        <Route path="/Checkout" element={<Checkout/>} />
         
     </Routes>
 })
