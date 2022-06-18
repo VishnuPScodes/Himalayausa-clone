@@ -5,36 +5,39 @@
     margin: auto;
 }
 #single-c-item{
-    border: 1px solid blue;
+    margin: auto;
+    border-bottom: 1px solid rgb(177, 175, 175);
     height: 200px;
+    width: 95%;
+   
     display: flex;
 
 }
 #delete{
     height: 100%;
     width: 140px;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 
 
 }
 #c-img{
     width: 140px;
     height: 100%;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 
 }
 #c-name{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     height: 100%;
     width: 400px;
 }
 #c-price{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     height: 100%;
     width: 150px;
 }
 #c-title{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     height: 100%;
     width: 150px;
     margin-left: 100px;

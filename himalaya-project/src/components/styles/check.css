@@ -2,21 +2,22 @@
 
 
 #left-check{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     height: 100%;
     width: 45%;
     margin: auto;
 
 }
 #right-check{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     height: 900px;
     width: 45%;
     margin: auto;
     background-color: #f4f7f3;
 }
 #express-check{
-    border: 1px solid blue;
+    border-bottom: 1px solid rgb(206, 204, 204);
+    border-top: 1px solid  rgb(206, 204, 204);
     height: 90px;
     width: 85%;
     margin-left: 50px;
@@ -44,7 +45,7 @@
     margin-left: 50px;
 }
 #person-logo-div{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     height: 80px;
     width: 70%;
     margin-left: 50px;
@@ -110,12 +111,12 @@
     display: flex;
 }
 #img-cart-c{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     height: 100%;
     width: 70px;
 }
 #cart-name-c{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     height: 100%;
     width: 300px;
 }
