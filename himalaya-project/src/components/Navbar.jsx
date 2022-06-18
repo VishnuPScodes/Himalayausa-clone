@@ -94,14 +94,7 @@ import {Link} from 'react-router-dom'
             justify={'flex-end'}
             direction={'row'}
             spacing={6}>
-            {/* <Button
-              as={'a'}
-              fontSize={'sm'}
-              fontWeight={400}
-              variant={'link'}
-              href={'#'}>
-              Sign In
-            </Button> */}
+           
    <Tooltip label='Search'>
       <CustomCard>
       <RiSearchLine  />
@@ -119,28 +112,7 @@ import {Link} from 'react-router-dom'
       <CustomCard>
       <BsBag/>
       </CustomCard>
-    </Tooltip>
- 
-    
-   
-            {/* <Button
-              display={{ base: 'none', md: 'inline-flex' }}
-              fontSize={'sm'}
-              fontWeight={600}
-              color={'white'}
-              bg={'pink.400'}
-              href={'#'}
-              _hover={{
-                bg: 'pink.300',
-              }}>
-              Sign Up
-            </Button> */}
-            {/* <IoPersonOutline/> */}
-          
-          
-            
-           
-            
+    </Tooltip>     
           </Stack>
         </Flex>
   
@@ -297,14 +269,6 @@ import {Link} from 'react-router-dom'
   
     return (
       <>
-        {/* <RadioGroup defaultValue={placement} onChange={setPlacement}>
-          <Stack direction='row' mb='4'>
-            <Radio value='top'>Top</Radio>
-            <Radio value='right'>Right</Radio>
-            <Radio value='bottom'>Bottom</Radio>
-            <Radio value='left'>Left</Radio>
-          </Stack>
-        </RadioGroup> */}
         <Button colorScheme='blue' onClick={onOpen}>
           Open
         </Button>
