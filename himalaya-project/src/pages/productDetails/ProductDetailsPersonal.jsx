@@ -1,16 +1,17 @@
 
-import { Button } from '@chakra-ui/react'
+import { Button, Spinner } from '@chakra-ui/react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { BsBag } from 'react-icons/bs'
 import { useParams } from 'react-router'
-import { useDispatch } from 'react-redux'
-import { addCartQuantity } from '../../redux/action'
+import { useDispatch ,useSelector} from 'react-redux'
+import { addCartQuantity, productLoadingFalse, productLoadingTrue } from '../../redux/action'
 // import '../components/styles/products.css'
 
 
 
 export const ProductDetailsPersonal=(()=>{
+    const loading=useSelector(state=>state.productLoading)
     const [singledata,setSingledata]=useState('')
     const dispatch=useDispatch()
     const {id}=useParams()
@@ -26,14 +27,16 @@ export const ProductDetailsPersonal=(()=>{
         axios.post(`https://himalayausa-clone.herokuapp.com/cart`,cartData)
     })
     useEffect(()=>{
+        dispatch(productLoadingTrue())
         axios.get(`https://himalayausa-clone.herokuapp.com/personal/${id}`).then((res)=>{
+            productLoadingFalse()
             setSingledata(res.data)
         })
     },[])
     console.log('single',singledata)
    
     return <div>
-        <div id="pro-detail-main">
+        {loading==true?<Spinner/>:  <div id="pro-detail-main">
           <div id='left-pro'>
             <div id='img-pro'><img src={singledata.url} alt="" /></div>
           </div>
@@ -62,6 +65,7 @@ export const ProductDetailsPersonal=(()=>{
                 <div id='des-pro'>{singledata.des}</div>
             </div>
           </div>
-        </div>
+        </div>}
+      
     </div>
 })
