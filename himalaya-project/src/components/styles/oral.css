@@ -59,3 +59,36 @@
     margin-left: 15px;
     position: relative;
 }
+#health-interest{
+    margin-top: 150px;
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    color: #333333;
+   margin-right: 70px;
+}
+#health-interest:hover{
+    color: #a3a3a3;
+    cursor: pointer;
+}
+
+#single-property{
+    margin-top: 15px;
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 29px;
+    color: #848282;
+   margin-right: 70px;
+   text-align: left;
+}
+#single-property:hover{
+    color: #a3a3a3;
+    cursor: pointer;
+}
+#all-property{
+    margin-left: 40px;
+}

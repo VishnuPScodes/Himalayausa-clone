@@ -11,6 +11,11 @@ import { useNavigate } from 'react-router'
 
 export const HerbalList=(()=>{
     const navigate=useNavigate()
+    const handleSort=((name)=>{
+        axios.get(`http://localhost:8080/herbal?q=${name}`).then((res)=>{
+            setData(res.data)
+        })
+    })
     const loading=useSelector(state=>state.productLoading)
     const[items,setItems]=useState(12)
     const handleNext=(()=>{
@@ -29,7 +34,51 @@ export const HerbalList=(()=>{
     > <h1>Oral Care</h1>
         <div style={{display:"flex"}}>
        
-            <div id="side-1">Filter</div>
+            <div id="side-1">
+                <div id='health-interest'>Health Interests</div>
+                <div id='all-property'>
+                <div id='single-property' onClick={(()=>{
+                    handleSort('blood')
+                })} >Blood Sugar</div>
+                <div id='single-property'onClick={(()=>{
+                    handleSort('brain')
+                })} >Brain and Congnitive</div>
+                <div id='single-property'onClick={(()=>{
+                    handleSort('digest')
+                })} >Digestion</div>
+                <div id='single-property'onClick={(()=>{
+                    handleSort('energy')
+                })} >Energy and Vitality</div>
+                <div id='single-property' onClick={(()=>{
+                    handleSort('skin')
+                })}>Skin Hair & Nails</div>
+                <div id='single-property' onClick={(()=>{
+                    handleSort('heart')
+                })}>Heart and Cardio</div>
+                <div id='single-property' onClick={(()=>{
+                    handleSort('immune')
+                })}>Immune Support</div>
+                <div id='single-property' onClick={(()=>{
+                    handleSort('urinary')
+                })}>Urinary</div>
+                <div id='single-property' onClick={(()=>{
+                    handleSort('joint')
+                })}>Joint and Mobility</div>
+                <div id='single-property' onClick={(()=>{
+                    handleSort('liver')
+                })}>Liver and Cleanse</div>
+                <div id='single-property' onClick={(()=>{
+                    handleSort('wellness')
+                })}>Mens and Wellness</div>
+                <div id='single-property' onClick={(()=>{
+                    handleSort('respiratory')
+                })}>Respiratory</div>
+                <div id='single-property' onClick={(()=>{
+                    handleSort('sleep')
+                })}>Sleep</div>
+                </div>
+                
+            </div>
             <div id="contend">
                 <div id='sort' >ff</div>
                 <div id='data-map'>
