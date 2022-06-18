@@ -22,7 +22,7 @@ export const Checkout=(()=>{
     const [user,setUser]=useState('');
     const navigate=useNavigate()
     useEffect(()=>{
-        axios.get(`http://localhost:8080/cart`).then((res)=>{
+        axios.get(`https://himalayausa-clone.herokuapp.com/cart`).then((res)=>{
             setData(res.data)
         })
     },[])
@@ -80,7 +80,9 @@ export const Checkout=(()=>{
            
             </div>
             <div id='box-cart' style={{display:"flex"}}>
-                    <button id='btn-check-out-1'>Continue to shipping </button>
+                    <button id='btn-check-out-1' onClick={(()=>{
+                        navigate('/Payment')
+                    })}>Continue to shipping </button>
                     <div id='link-check'>
                         <Link  to={'/Cart'}>Return to cart</Link>
                     </div>

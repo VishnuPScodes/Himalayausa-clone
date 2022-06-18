@@ -23,10 +23,10 @@ export const ProductDetailsPersonal=(()=>{
             qty:cartitems,
             data:singledata
         }
-        axios.post(`http://localhost:8080/cart`,cartData)
+        axios.post(`https://himalayausa-clone.herokuapp.com/cart`,cartData)
     })
     useEffect(()=>{
-        axios.get(`http://localhost:8080/personal/${id}`).then((res)=>{
+        axios.get(`https://himalayausa-clone.herokuapp.com/personal/${id}`).then((res)=>{
             setSingledata(res.data)
         })
     },[])

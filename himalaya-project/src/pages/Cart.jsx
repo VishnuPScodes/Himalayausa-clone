@@ -13,7 +13,7 @@ export const Cart=(()=>{
     const [deleted,setDeleted]=useState(false)
     const dispatch=useDispatch()
     useEffect(()=>{
-        axios.get('http://localhost:8080/cart').then((res)=>{
+        axios.get('https://himalayausa-clone.herokuapp.com/cart').then((res)=>{
             setCartdata(res.data)
             dispatch(addCartQuantity(res.data))
         })
@@ -26,11 +26,11 @@ export const Cart=(()=>{
    
     return <div>
         <div id="heading">Shopping Cart</div>
-        {cartDataRedux.map((e)=>{
+        {cartdata.map((e)=>{
             return (
                 <div id='single-c-item'>
                 <div id='delete'><AiOutlineDelete onClick={(()=>{
-                      axios.delete(`http://localhost:8080/cart/${e.id}`).then(()=>{
+                      axios.delete(`https://himalayausa-clone.herokuapp.com/cart/${e.id}`).then(()=>{
                         setDeleted(!deleted)
                       })
                 })} id='delete-icon'/></div>

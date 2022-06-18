@@ -1,5 +1,5 @@
 #back-img{
-    border: 1px solid blue;
+    border: 1px solid white;
     background-image: url('https://cdn.shopify.com/s/files/1/0399/1728/9633/files/hero-desktop-ashwagandha_x720.jpg?v=1608662725');
    background-size: 100% 100%;
     height: 480px;
@@ -22,7 +22,7 @@
     text-align: center;
 }
 #des-div{
-    border: 1px solid blue;
+    border: 1px solid white;
     height: 60px;
     width: 360px;
     margin-left: 30px;
@@ -65,7 +65,7 @@
     background-color:#333333;
 }
 #shop-category{
-    border: 1px solid blue;
+    border: 1px solid white;
     height: 600px;
    
     margin-top: 80px;
@@ -81,7 +81,7 @@
     margin-top: 15px;
 }
 #box-outer{
-    border: 1px solid blue;
+    border: 1px solid white;
     height: 440px;
     /* display: flex; */
     width: 90%;
@@ -90,7 +90,7 @@
 }
 /* #box-outer>div{
     width: 33%;
-    border: 1px solid blue;
+    border: 1px solid white;
     height: 100%;
 } */
 #box-outer>div>img{

@@ -12,17 +12,21 @@ import { SliderData2 } from "./SliderData";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from 'react-router';
 
 
 
 
 export const Home=(()=>{
+  const navigate=useNavigate()
     return <div  >
         <div id="back-img" >
             <div id='asw-div' > <div id='text-asw'> ASHWAGANDHA</div> </div>
             <div id='des-div' >A star performer for stress and energy in a potent, organic caplet.</div>
             <div id='btn-now'>
-            <button id='btn' >Shop now</button>
+            <button id='btn' onClick={(()=>{
+              navigate('/ProductDetailsHerbal/35')
+            })} >Shop now</button>
             </div>
            
         </div>

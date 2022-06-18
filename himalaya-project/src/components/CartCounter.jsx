@@ -7,7 +7,7 @@ import { useEffect, useState } from "react"
 export const CartCounter=(()=>{
     const[cartcount,setCartcount]=useState([])
     useEffect(()=>{
-        axios.get('http://localhost:8080/cart').then((res)=>{
+        axios.get('https://himalayausa-clone.herokuapp.com/cart').then((res)=>{
             setCartcount(res.data)
         })
     },[setCartcount])

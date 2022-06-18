@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router'
 export const HerbalList=(()=>{
     const navigate=useNavigate()
     const handleSort=((name)=>{
-        axios.get(`http://localhost:8080/herbal?q=${name}`).then((res)=>{
+        axios.get(`https://himalayausa-clone.herokuapp.com/herbal?q=${name}`).then((res)=>{
             setData(res.data)
         })
     })
@@ -26,7 +26,7 @@ export const HerbalList=(()=>{
     const dispatch=useDispatch()
     useEffect(()=>{
         dispatch(productLoadingTrue())
-      axios.get(`http://localhost:8080/herbal?_limit=${items}`).then((res)=>{
+      axios.get(`https://himalayausa-clone.herokuapp.com/herbal?_limit=${items}`).then((res)=>{
          setData(res.data)
          dispatch(productLoadingFalse())
       })

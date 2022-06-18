@@ -22,7 +22,7 @@ export const Payment=(()=>{
     const [user,setUser]=useState('');
     const navigate=useNavigate()
     useEffect(()=>{
-        axios.get(`http://localhost:8080/cart`).then((res)=>{
+        axios.get(`https://himalayausa-clone.herokuapp.com/cart`).then((res)=>{
             setData(res.data)
         })
     },[])

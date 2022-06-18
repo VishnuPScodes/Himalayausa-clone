@@ -33,7 +33,7 @@ export const OralListPage=(()=>{
             let params={
                 category:searchParams.getAll('category')
             }
-            axios.get(`http://localhost:8080/oral?_limit=${items}`,{
+            axios.get(`https://himalayausa-clone.herokuapp.com/oral?_limit=${items}`,{
                 params:{
                     ...params
                 }
@@ -53,7 +53,7 @@ export const OralListPage=(()=>{
         if(v==''){
             setChange(!change)
         }   
-        axios.get(`http://localhost:8080/oral?q=${v}`).then((res)=>{
+        axios.get(`https://himalayausa-clone.herokuapp.com/oral?q=${v}`).then((res)=>{
             setData(res.data)
         })
     })

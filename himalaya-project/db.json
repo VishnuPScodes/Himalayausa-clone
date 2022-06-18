@@ -402,19 +402,37 @@
       "price": "17.95",
       "des": "All around the world in many different cultures, countries, and traditional systems of healthcare, Garlic has been used consistently for heart health, cardiovascular and immune support. For wellness of the heart, Garlic remains one of the whole world’s favorite gifts from nature.*  Suggested Use  Adults take 2 caplets twice daily after meals",
       "id": 34
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0399/1728/9633/products/Ashwagandha_BoxBottle_30_1024x1024.jpg?v=1591028054",
+      "name": "ashwagandha",
+      "price": "14.5",
+      "des": "Ashwagandha has been used for centuries for stress and energy. Himalaya’s Organic Ashwagandha is a clinically-studied blend of Ashwagandha root powder and root extract that provides stress relief by supporting your adrenals and balancing cortisol.*",
+      "id": 35
     }
   ],
   "cart": [
     {
-      "qty": 4,
+      "qty": 1,
       "data": {
-        "url": "https://cdn.shopify.com/s/files/1/0399/1728/9633/products/HimalayaBambooToothpaste-Tube_Front_1024x1024.png?v=1613065864",
-        "name": "Bamboo & Sea Salt Whitening Antiplaque Toothpaste",
-        "price": "5.99",
-        "des": "Get the smile you’ve been looking for with gentle Bamboo, which is famous for its strong fibers and silica, and purified Sea Salt for a clean, fresh mouth and healthy-looking gums.  Suggested Use  Brush thoroughly after each meal, or at least twice a day, or as directed by a dentist. Consult your dentist for children under 2 years. Children under 6 years should use a pea-sized amount under adult supervision.",
+        "url": "https://cdn.shopify.com/s/files/1/0399/1728/9633/products/image-3_1024x1024.png?v=1591028195",
+        "name": "Back to Balance Cleanse™",
+        "price": "29.95",
+        "des": "To keep your body cleaner and feel less bloated, you deserve more than just a quick herbal purge. You deserve the morning and evening wisdom of Himalaya Back to Balance Cleanse, a gentle and effective two-part plant-based detox program.*  Suggested Use  Part One: Take one capsule in the morning after breakfast.  Part two: Take one capsule in the evening after dinner.",
         "id": 1
       },
-      "id": 1
+      "id": 3
+    },
+    {
+      "qty": 1,
+      "data": {
+        "url": "https://cdn.shopify.com/s/files/1/0399/1728/9633/products/BEAUTY_bodybar_refreshing-1_1024x1024.png?v=1595909931",
+        "name": "Body Bar: Refreshing (Lavender & Rosemary)",
+        "price": "4.99",
+        "des": "Calm your senses and rejuvenate your spirit with Himalaya Botanique's Lavender & Rosemary Body Bar. Rosemary awakens the senses and Lavendar leaves your skin feeling relaxed and clean. Gentle oils from Coconut and Cacao Butter hydrate and nourish your skin. Unlike common soaps, our bars use plant-based ingredients and saponified emollient oils to gently cleanse and moisturize.  Suggested Use  Work into a rich, moisturizing lather. Rinse thoroughly.",
+        "id": 2
+      },
+      "id": 4
     }
   ]
 }

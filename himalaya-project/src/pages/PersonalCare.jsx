@@ -22,7 +22,7 @@ export const PersonalCare=(()=>{
         if(v==''){
             setChange(!change)
         }   
-        axios.get(`http://localhost:8080/personal?q=${v}`).then((res)=>{
+        axios.get(`https://himalayausa-clone.herokuapp.com/personal?q=${v}`).then((res)=>{
             setData(res.data)
         })
     })
@@ -30,7 +30,7 @@ export const PersonalCare=(()=>{
     const dispatch=useDispatch()
     useEffect(()=>{
         dispatch(productLoadingTrue())
-      axios.get(`http://localhost:8080/personal?_limit=${items}`).then((res)=>{
+      axios.get(`https://himalayausa-clone.herokuapp.com/personal?_limit=${items}`).then((res)=>{
          setData(res.data)
          dispatch(productLoadingFalse())
       })

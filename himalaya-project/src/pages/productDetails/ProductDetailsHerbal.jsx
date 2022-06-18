@@ -22,10 +22,10 @@ export const ProductDetailsHerbal=(()=>{
             qty:cartitems,
             data:singledata
         }
-        axios.post(`http://localhost:8080/cart`,cartData)
+        axios.post(`https://himalayausa-clone.herokuapp.com/cart`,cartData)
     })
     useEffect(()=>{
-        axios.get(`http://localhost:8080/herbal/${id}`).then((res)=>{
+        axios.get(`https://himalayausa-clone.herokuapp.com/herbal/${id}`).then((res)=>{
             setSingledata(res.data)
         })
     },[])
@@ -57,7 +57,10 @@ export const ProductDetailsHerbal=(()=>{
                     <Button id='addtocart' onClick={addToCart}> <BsBag/> ADD TO CART</Button>
                     {/* <Button>-</Button> <Button>+</Button> */}
                 </div>
-                <Button id='buy-it'>BUY IT NOW</Button>
+                <Button id='buy-it' onClick={(()=>{
+                    
+                    navigate('/Checkout')
+                })}>BUY IT NOW</Button>
                 <div id='des-pro'>{singledata.des}</div>
             </div>
           </div>
