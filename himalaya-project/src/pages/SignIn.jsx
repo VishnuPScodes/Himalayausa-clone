@@ -13,11 +13,32 @@ import {
     useColorModeValue,
     Spinner,
   } from '@chakra-ui/react';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { useState } from 'react';
 import { useNavigate } from 'react-router';
-  
+import { auth } from '../components/firebase/firebase';
+import { authActionFailure, authActionRequest, authActionSuccess } from '../redux/action';
+import { useDispatch ,useSelector} from 'react-redux';  
+import { async } from '@firebase/util';
   export const SignIn=()=> {
-    
+    const[email,setEmail]=useState('')
+    const[password,setPassword]=useState('')
     const navigate=useNavigate()
+    const dispatch=useDispatch()
+    const loading=useSelector(state=>state.loading)
+    const handleSignin=async ()=>{
+      dispatch(authActionRequest())
+      console.log(email,password)
+      try{
+        const user=await signInWithEmailAndPassword(auth,email,password)
+          dispatch(authActionSuccess())
+       
+       
+      }catch(e){
+          console.log('err',err.message)
+          dispatch(authActionFailure())
+      }
+    }
     return <div> 
       <Flex
         minH={'100vh'}
@@ -39,11 +60,15 @@ import { useNavigate } from 'react-router';
             <Stack spacing={4}>
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>
-                <Input type="email" />
+                <Input onChange={((e)=>{
+                  setEmail(e.target.value)
+                })} type="email" />
               </FormControl>
               <FormControl id="password">
                 <FormLabel>Password</FormLabel>
-                <Input type="password" />
+                <Input onChange={((e)=>{
+                  setPassword(e.target.value)
+                })} type="password" />
               </FormControl>
               <Stack spacing={10}>
                 <Stack
@@ -58,8 +83,8 @@ import { useNavigate } from 'react-router';
                   color={'white'}
                   _hover={{
                     bg: '#5a6952',
-                  }}>
-                  Sign in
+                  }} onClick={handleSignin}>
+                  {loading==true?<Spinner/>:"Sign in"}
                 </Button>
                
                 <div style={{width:"340px",margin:"auto",textAlign:"left"}}>   
