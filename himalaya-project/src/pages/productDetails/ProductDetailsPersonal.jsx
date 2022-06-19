@@ -34,16 +34,16 @@ export const ProductDetailsPersonal=(()=>{
      
     })
     useEffect(()=>{
-        dispatch(productLoadingTrue())
+        // dispatch(productLoadingTrue())
         axios.get(`https://himalayausa-clone.herokuapp.com/personal/${id}`).then((res)=>{
-            productLoadingFalse()
+            // productLoadingFalse()
             setSingledata(res.data)
         })
     },[])
     console.log('single',singledata)
    
     return <div>
-        {loading==true?<Spinner/>:  <div id="pro-detail-main">
+        {loading==true?<Spinner/>:<div id="pro-detail-main">
           <div id='left-pro'>
             <div id='img-pro'><img src={singledata.url} alt="" /></div>
           </div>

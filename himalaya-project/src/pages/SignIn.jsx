@@ -19,25 +19,35 @@ import { useNavigate } from 'react-router';
 import { auth } from '../components/firebase/firebase';
 import { authActionFailure, authActionRequest, authActionSuccess } from '../redux/action';
 import { useDispatch ,useSelector} from 'react-redux';  
-import { async } from '@firebase/util';
+
   export const SignIn=()=> {
+    const [formdata,setFormdata]=useState([])
     const[email,setEmail]=useState('')
     const[password,setPassword]=useState('')
     const navigate=useNavigate()
     const dispatch=useDispatch()
     const loading=useSelector(state=>state.loading)
+    const handleChange=((e)=>{
+      const {id,value}=e.target;
+      setFormdata({...formdata,
+      [id]:value
+      })
+    })
+  
     const handleSignin=async ()=>{
+      console.log(formdata)
       dispatch(authActionRequest())
-      console.log(email,password)
       try{
-        const user=await signInWithEmailAndPassword(auth,email,password)
-          dispatch(authActionSuccess())
-       
-       
-      }catch(e){
-          console.log('err',err.message)
-          dispatch(authActionFailure())
+        const user=await signInWithEmailAndPassword(auth,formdata.email,formdata.password)
+        console.log('user',user)
+        localStorage.setItem('auth',true)
+        dispatch(authActionSuccess())
+        navigate('/')
+
+      }catch(err){
+        console.log('error',err.message)
       }
+      
     }
     return <div> 
       <Flex
@@ -60,15 +70,11 @@ import { async } from '@firebase/util';
             <Stack spacing={4}>
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>
-                <Input onChange={((e)=>{
-                  setEmail(e.target.value)
-                })} type="email" />
+                <Input id='email' onChange={handleChange} type="email" />
               </FormControl>
               <FormControl id="password">
                 <FormLabel>Password</FormLabel>
-                <Input onChange={((e)=>{
-                  setPassword(e.target.value)
-                })} type="password" />
+                <Input id='password' onChange={handleChange} type="password" />
               </FormControl>
               <Stack spacing={10}>
                 <Stack

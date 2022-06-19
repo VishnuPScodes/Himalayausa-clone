@@ -1,6 +1,6 @@
 import '../components/styles/home.css'
 import React, { Component } from "react";
-import { Box ,HStack,Image, SimpleGrid, Stack} from '@chakra-ui/react';
+import { Box ,HStack,Image, Link, SimpleGrid, Stack} from '@chakra-ui/react';
 import {FaFacebookF} from 'react-icons/fa' 
 import { FaInstagram } from 'react-icons/fa';
 import Slider from "react-slick";
@@ -42,7 +42,7 @@ export const Home=(()=>{
                 <Box w={{base:"100%",md:"100%",sm:"100%"}}>
                     <img src="https://cdn.shopify.com/s/files/1/0399/1728/9633/files/HUSA-Ashwagandha-90ct-Carton_Bottle-square_1024x.png?v=1607451904" alt="" />
                     <div id='bottom-text' >Supplements</div>
-                    <div id='bottom-text-2' color={{sm:"red",md:"green"}}>See All Supplemets</div>
+                    <Link href='/Herbal' id='bottom-text-2' color={{sm:"red",md:"green"}}>See All Supplemets</Link>
                 </Box>
                 <Box w={{base:"100%",md:"100%",sm:"100%"}}>
                     <img src="https://cdn.shopify.com/s/files/1/0399/1728/9633/files/WCC-SIMPLY-MINT-RENDER-WITH-BRUSH-High-Res_1024x.png?v=1607451904" alt="" />
