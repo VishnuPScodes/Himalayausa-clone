@@ -7,7 +7,7 @@ import { useDispatch ,useSelector} from 'react-redux'
 import { productLoadingFalse, productLoadingTrue } from '../redux/action'
 import { Spinner } from '@chakra-ui/react'
 import { useNavigate } from 'react-router'
-
+import { dataActionRequest, dataActionSuccess} from '../redux/action'
 
 export const HerbalList=(()=>{
     const navigate=useNavigate()
@@ -86,15 +86,25 @@ export const HerbalList=(()=>{
                 <div id='data-map'>
                     {data.map((e)=>{
                         return (
-                            <div onClick={(()=>{
-                                navigate(`/ProductDetailsHerbal/${e.id}`)
-                            })} key={e.id} id='single-data'>
+                            <div  key={e.id} id='single-data'>
                        
-                            <img src={e.url} alt="image" />
+                            <img onClick={(()=>{
+                                navigate(`/ProductDetailsHerbal/${e.id}`)
+                            })} src={e.url} alt="image" />
                         
                         <div style={{textAlign:"left"}}>{e.name}</div>
                         <div style={{display:"flex",height:"45px",marginTop:"20px"}}>
-                            <div style={{width:"50px",backgroundColor:"#a3b49b"}} >
+                            <div onClick={(()=>{
+                    dispatch(dataActionRequest())
+                    console.log('e is',e)
+                    let cartData={
+                        qty:1,
+                        data:e
+                    }
+                    axios.post('https://himalayausa-clone.herokuapp.com/cart',cartData).then(()=>{
+                        dispatch(dataActionSuccess())
+                    })
+                   })} style={{width:"50px",backgroundColor:"#a3b49b"}} >
                              <BsHandbag style={{margin:"auto",marginTop:"5px",height:"30px"}} />
                              
                             </div>
