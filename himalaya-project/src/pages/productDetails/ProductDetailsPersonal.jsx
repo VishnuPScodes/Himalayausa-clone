@@ -7,7 +7,17 @@ import { useParams } from 'react-router'
 import { useDispatch ,useSelector} from 'react-redux'
 import { addCartQuantity, productLoadingFalse, productLoadingTrue } from '../../redux/action'
 // import '../components/styles/products.css'
-
+import {
+    Popover,
+    PopoverTrigger,
+    PopoverContent,
+    PopoverHeader,
+    PopoverBody,
+    PopoverFooter,
+    PopoverArrow,
+    PopoverCloseButton,
+    PopoverAnchor,
+  } from '@chakra-ui/react'
 
 
 export const ProductDetailsPersonal=(()=>{

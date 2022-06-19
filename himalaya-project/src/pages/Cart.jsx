@@ -3,19 +3,24 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import '../components/styles/cart.css'
 import {AiOutlineDelete} from 'react-icons/ai'
-import { addCartQuantity } from '../redux/action'
+import { addCartQuantity, productLoadingFalse, productLoadingTrue } from '../redux/action'
 import { useSelector,useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
+import { Spinner } from '@chakra-ui/react'
 export const Cart=(()=>{
     const navigate=useNavigate()
     const [cartitems,setCartitems]=useState(1)
     const [cartdata,setCartdata]=useState([])
     const [deleted,setDeleted]=useState(false)
     const dispatch=useDispatch()
+    const loading=useSelector(state=>state.productLoading)
     useEffect(()=>{
+        dispatch(productLoadingTrue())
         axios.get('https://himalayausa-clone.herokuapp.com/cart').then((res)=>{
             setCartdata(res.data)
+          
             dispatch(addCartQuantity(res.data))
+            dispatch(productLoadingFalse())
         })
     },[deleted])
     
@@ -25,7 +30,7 @@ export const Cart=(()=>{
   
    
     return <div>
-        <div id="heading">Shopping Cart</div>
+        {loading==true?<Spinner/>:<div> <div id="heading">Shopping Cart</div>
         {cartdata.map((e)=>{
             return (
                 <div id='single-c-item'>
@@ -62,7 +67,8 @@ export const Cart=(()=>{
             <button id='btn-cart-5' onClick={(()=>{
                 navigate('/Checkout')
             })}>PROCCEED TO CHECKOUT</button>
-        </div>
+        </div></div>}
+       
        
     </div>
 })
