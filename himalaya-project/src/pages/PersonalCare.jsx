@@ -8,18 +8,7 @@ import { dataActionRequest, dataActionSuccess, productLoadingFalse, productLoadi
 import { Spinner } from '@chakra-ui/react'
 import { useNavigate } from 'react-router'
 import { RadioGroup,Radio } from '@chakra-ui/react'
-import {
-    Popover,
-    PopoverTrigger,
-    PopoverContent,
-    PopoverHeader,
-    PopoverBody,
-    PopoverFooter,
-    PopoverArrow,
-    PopoverCloseButton,
-    PopoverAnchor,
-    Portal
-  } from '@chakra-ui/react'
+
 export const PersonalCare=(()=>{
     const addingtocart=useSelector(state=>state.cartloading)
     const [change,setChange]=useState(false)

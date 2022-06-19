@@ -8,7 +8,7 @@ import { productLoadingFalse, productLoadingTrue } from '../redux/action'
 import { Checkbox, CheckboxGroup, Radio, RadioGroup, Spinner } from '@chakra-ui/react'
 import { useNavigate, useParams } from 'react-router'
 import { useSearchParams } from 'react-router-dom'
-
+import { dataActionRequest, dataActionSuccess} from '../redux/action'
 
 export const OralListPage=(()=>{
     const[change,setChange]=useState(false)
@@ -76,7 +76,7 @@ export const OralListPage=(()=>{
 
         {/* second sorted datas */}
         <div id='health-interest-2'>Flavor</div>
-  
+
   <div id='all-property'> 
         <RadioGroup id='single-property' onChange={handleCheck} >
             <Radio value={''} >All</Radio> <br />
@@ -95,15 +95,25 @@ export const OralListPage=(()=>{
         <div id='data-map'>
             {data.map((e)=>{
                 return (
-                    <div onClick={(()=>{
-                        navigate(`/ProductDetails/${e.id}`)
-                    })} key={e.id} id='single-data'>
+                    <div  key={e.id} id='single-data'>
                
-                    <img src={e.url} alt="image" />
+                    <img onClick={(()=>{
+                        navigate(`/ProductDetails/${e.id}`)
+                    })} src={e.url} alt="image" />
                 
                 <div style={{textAlign:"left"}}>Bamboo & Sea Salt Whitening Antiplaque Toothpaste</div>
                 <div style={{display:"flex",height:"45px",marginTop:"20px"}}>
-                    <div id='bag-btn-3' style={{width:"50px",backgroundColor:"#a3b49b"}} >
+                    <div onClick={(()=>{
+                    dispatch(dataActionRequest())
+                    console.log('e is',e)
+                    let cartData={
+                        qty:1,
+                        data:e
+                    }
+                    axios.post('https://himalayausa-clone.herokuapp.com/cart',cartData).then(()=>{
+                        dispatch(dataActionSuccess())
+                    })
+                   })} id='bag-btn-3' style={{width:"50px",backgroundColor:"#a3b49b"}} >
                      <BsHandbag style={{margin:"auto",marginTop:"5px",height:"30px"}} />
                     </div>
                     <div id='price-3'>${e.price}</div>
