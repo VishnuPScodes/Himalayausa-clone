@@ -1,0 +1,82 @@
+#footer-main{
+    /* border: 1px solid blue; */
+    height: 400px;
+    width: 99%;
+    margin: auto;
+    background-color: #eef2f0;
+}
+#footer-inner-div{
+    /* border: 1px solid blue; */
+    height: 90%;
+    width: 95%;
+    margin: auto;
+    margin-top: 2.5%;
+    display: flex;
+    text-align: left;
+}
+#footer-inner-div>div{
+    width: 25%;
+}
+#link-footer{
+    text-align: left;
+    color: #888b93;
+}
+#f-e{
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 23px;
+    color: #333333;
+}
+#f-2-e{
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 23px;
+    color: #a3a3a3;
+}
+#header-f{
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #333333;
+}
+#mail-b-f{
+   background-color: white;
+    height: 35px;
+    width: 250px;
+    margin-top: 25px;
+    display: flex;
+    text-align: left;
+    align-items: right;
+}
+#f-des{
+    text-align: left;
+    margin-top: 30px;
+}
+#folo-f{
+    height: 40px;
+    width: 300px;
+ 
+    display: flex;
+    margin-top: 30px;
+
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #333333;
+}
+#s-icon{
+    font-size: 25px;
+    margin-right: 15px;
+    color: #a3a3a3;
+}
+#s-icon:hover{
+    color: #333333;
+}
