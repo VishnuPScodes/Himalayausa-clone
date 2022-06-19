@@ -4,7 +4,7 @@ import '../components/styles/oral.css'
 import { BsHandbag } from 'react-icons/bs'
 import axios from 'axios'
 import { useDispatch ,useSelector} from 'react-redux'
-import { productLoadingFalse, productLoadingTrue } from '../redux/action'
+import { dataActionRequest, dataActionSuccess, productLoadingFalse, productLoadingTrue } from '../redux/action'
 import { Spinner } from '@chakra-ui/react'
 import { useNavigate } from 'react-router'
 import { RadioGroup,Radio } from '@chakra-ui/react'
@@ -21,6 +21,7 @@ import {
     Portal
   } from '@chakra-ui/react'
 export const PersonalCare=(()=>{
+    const addingtocart=useSelector(state=>state.cartloading)
     const [change,setChange]=useState(false)
     const navigate=useNavigate()
     const loading=useSelector(state=>state.productLoading)
@@ -76,28 +77,21 @@ export const PersonalCare=(()=>{
                    
                    <div style={{textAlign:"left"}}>{e.name}</div>
                    <div style={{display:"flex",height:"45px",marginTop:"20px"}}>
-                   <div style={{width:"50px",backgroundColor:"#a3b49b"}} >
+                   <div onClick={(()=>{
+                    dispatch(dataActionRequest())
+                    console.log('e is',e)
+                    let cartData={
+                        qty:1,
+                        data:e
+                    }
+                    axios.post('https://himalayausa-clone.herokuapp.com/cart',cartData).then(()=>{
+                        dispatch(dataActionSuccess())
+                    })
+                   })} style={{width:"50px",backgroundColor:"#a3b49b"}} >
                         <BsHandbag style={{margin:"auto",marginTop:"5px",height:"30px"}} />
                        </div>
                  
-                        {/*   
-                        <Popover>
-                        <PopoverTrigger>
-                        
-                        </PopoverTrigger>
-                        <Portal>
-                            <PopoverContent>
-                            <PopoverArrow />
-                            <PopoverHeader>Header</PopoverHeader>
-                            <PopoverCloseButton />
-                            <PopoverBody>
-                                
-                                <div>lorem dfkejfkejkfkkkkkkkkeeeee</div>
-                            </PopoverBody>
-                            <PopoverFooter>This is the footer</PopoverFooter>
-                            </PopoverContent>
-                        </Portal>
-                        </Popover> */}
+                      
                        <div id='price-3'>${e.price}</div>
                        <div id='hover-cart' style={{backgroundColor:"#a3b49b",width:"110px"}}>ADD TO CART</div>
                    </div>
