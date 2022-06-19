@@ -47,12 +47,12 @@ export const Home=(()=>{
                 <Box w={{base:"100%",md:"100%",sm:"100%"}}>
                     <img src="https://cdn.shopify.com/s/files/1/0399/1728/9633/files/WCC-SIMPLY-MINT-RENDER-WITH-BRUSH-High-Res_1024x.png?v=1607451904" alt="" />
                     <div id='bottom-text' >Oral Care</div>
-                    <div id='bottom-text-2'>See All Oral Care</div>
+                    <Link href='/Oralcare' id='bottom-text-2'>See All Oral Care</Link>
                 </Box>
                 <Box w={{base:"100%",md:"100%",sm:"100%"}}>
                     <img src="https://cdn.shopify.com/s/files/1/0399/1728/9633/files/Face_Wash-Balancing-Box-Bottle-square_1024x.png?v=1607451904" alt="" />
                     <div id='bottom-text' >Personal Care</div>
-                    <div id='bottom-text-2'>See All Personal Care</div>
+                    <Link href='/Personalcare' id='bottom-text-2'>See All Personal Care</Link>
                 </Box>
             </SimpleGrid>
 
