@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import { Cart } from "../pages/Cart"
+import { CartEmpty } from "../pages/CartEmpty"
 import { Checkout } from "../pages/Checkout"
 import { HerbalList } from "../pages/HerbalList"
 import { Home } from "../pages/Home"
@@ -12,6 +13,7 @@ import { ProductDetailsPersonal } from "../pages/productDetails/ProductDetailsPe
 import { Register } from "../pages/Register"
 import { SignIn } from "../pages/SignIn"
 import { UserDetails } from "../pages/UserDetails"
+import { Footer } from "./Footer"
 import { PrivateRoute } from "./PrivateRoute"
 
 
@@ -37,6 +39,8 @@ export const Allroutes=(()=>{
         </PrivateRoute>} />
         <Route path="/Checkout" element={<Checkout/>} />
         <Route path="/Payment" element={<Payment/>} />
+        <Route path="/Cartempty" element={<CartEmpty/>} />
+        <Route path="/Footer" element={<Footer/>} />
         
     </Routes>
 })

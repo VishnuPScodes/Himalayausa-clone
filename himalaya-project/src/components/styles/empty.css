@@ -1,0 +1,46 @@
+#empty-main{
+    
+    height: 100%;
+    width:99%;
+}
+#cart-e-icon{
+    
+    height: 200px;
+    width: 200px;
+    margin: auto;
+    margin-top: 150px;
+}
+#cart-e-txt{
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 43px;
+    color: #333333;
+}
+#e-bottom{
+    font-family: Poppins,sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #333333;
+    margin-top: 20px;
+}
+
+#btn-so-e{
+    border: 1px solid #aba6a6;
+    width: 180px;
+    height: 40px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+#btn-so-e:hover{
+    border: 2px solid #333333;
+    transition: .5s;
+}
+#icon-bs{
+    font-size: 150px;
+    color: #e9e7e7;
+    margin-left: 20px;
+}

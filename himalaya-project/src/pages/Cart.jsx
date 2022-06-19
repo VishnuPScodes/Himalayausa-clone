@@ -7,6 +7,8 @@ import { addCartQuantity, productLoadingFalse, productLoadingTrue } from '../red
 import { useSelector,useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { Spinner } from '@chakra-ui/react'
+import '../components/styles/empty.css'
+import {BsCart} from 'react-icons/bs'
 export const Cart=(()=>{
     const navigate=useNavigate()
     const [cartitems,setCartitems]=useState(1)
@@ -21,6 +23,7 @@ export const Cart=(()=>{
           
             dispatch(addCartQuantity(res.data))
             dispatch(productLoadingFalse())
+           
         })
     },[deleted])
     
@@ -30,7 +33,17 @@ export const Cart=(()=>{
   
    
     return <div>
-        {loading==true?<Spinner/>:<div> <div id="heading">Shopping Cart</div>
+          {loading &&<Spinner/>}
+        {cartdata.length==0? <div>
+        <div id="empty-main">
+             <div id='cart-e-icon'><BsCart id='icon-bs'/></div>
+             <div id='cart-e-txt'>Shopping cart is empty</div>
+             <div id='e-bottom'>You have no items in your shopping cart.</div>
+             <div>
+                <button id='btn-so-e'>Continue Shopping</button>
+             </div>
+        </div>
+    </div>:<div> <div id="heading">Shopping Cart</div>
         {cartdata.map((e)=>{
             return (
                 <div id='single-c-item'>
@@ -68,6 +81,7 @@ export const Cart=(()=>{
                 navigate('/Checkout')
             })}>PROCCEED TO CHECKOUT</button>
         </div></div>}
+      
        
        
     </div>
